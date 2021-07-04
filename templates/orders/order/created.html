@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Thank you
+{% endblock %}
+{% block content %}
+    <h1>Thank you</h1>
+    <p>Your order has been successfully completed. Your order number is
+        <strong>{{ order.id }}</strong>.</p>
+    <p>
+    <p>order:{{ order.first_name }}</p>
+    <p>order:{{ order.last_name }}</p>
+    <p>order:{{ order.phone }}</p>
+    <p>quantity:{{ quantity }}</p>
+    <p>product: {{ product }}</p>
+    <p>price: {{ price }}</p>
+{% endblock %}
