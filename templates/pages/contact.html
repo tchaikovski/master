@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block description %}{{ product.description }}{% endblock %}
+{% block title %}{{ product.title }}{% endblock %}
+
+{% block content %}
+    <section class="our-contacts">
+        <div class="container">
+{#            <ul class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">#}
+{#                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="../index.html" class="breadcrumbs-item"> <span itemprop="name">Автошкола</span> </a>#}
+{#                    <meta itemprop="position" content="1">#}
+{#                </li>#}
+{#                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="#" class="breadcrumbs-item breadcrumbs-item-current"> <span itemprop="name">Контакты</span> </a>#}
+{#                    <meta itemprop="position" content="2">#}
+{#                </li>#}
+{#            </ul>#}
+            <div class="section-heading"><h1>Наши контакты</h1>
+                <p class="heading-caption">{{ product.adress }}</p>
+                <a href="#" class="heading-btn">Вызвать менеджера <i class="right-velvet-icon"></i></a></div>
+            <div class="contacts-top-banners">
+                <div class="contacts-top-banner"><p class="contacts-top-banner-title">Связь с нами</p>
+                    <p class="contacts-top-banner-supTitle">Телефон и почта</p>
+                    <div class="contacts-top-banner-contex"><p class="contacts-context-tel">{{ product.phone}}</p>
+                        <p class="contacts-context-mail">{{ product.mail}}</p></div>
+                </div>
+
+                <div class="contacts-top-banner"><p class="contacts-top-banner-title">Обучение проходит</p>
+                    <div class="contacts-top-banner-contex"><p>ул. Обская 29</p>
+                        <p>Часы работы: с 10:00 - 20:00, пн-пт</p></div>
+                </div>
+                <div class="contacts-top-banner"><p class="contacts-top-banner-title">Практика и полигон</p>
+                    <div class="contacts-top-banner-contex"><p>ул. Обская 29</p>
+                        <p>Часы работы: с 10:00 - 20:00, пн-пт</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

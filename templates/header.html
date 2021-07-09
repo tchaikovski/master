@@ -1,0 +1,185 @@
+{#header.html#}
+
+<header>
+    <div class="header-desktop desktop">
+        <div class="header-top">
+            <div class="container header-top-container">
+                <a href="/" class="header-logo">
+<img class="header-logo-img" width="44" height="44" src="/static/upload/svg/bitrix/templates/avtoshkola/img/svg/logo-gl.svg" alt="Автошкола в Ханты-Мансийске">
+                <p class="header-logo-name"> Автошкола Чайковского
+{#                    <span>лицензированная автошкола</span>#}
+                </p></a>
+                <nav class="header-nav">
+                    <ul class="header-nav-list">
+                        <li class="header-nav-item driving-branches "><a href="#" class="header-nav-item-link">Автошколы</a></li>
+                        <li class="header-nav-item "><a href="#" class="header-nav-item-link">Категории</a>
+                            <ul class="categories-submenu">
+                                <li class="categories-items categories-items-strong-b">
+                                    <div class="categories-items_img"><img src="/static/upload/svg/bitrix/templates/avtoshkola/img/categorii/category-1.svg"></div>
+                                    <div><p><a class="categories-item-strong" href="#"> А - Мотоциклы </a></p>
+                                        <p><a href="#"> A1 - легкие мотоциклы </a></p>
+                                        <p><a href="#"> M - мопеды </a></p>
+                                        <p><a href="#"> Детская мотошкола </a></p></div>
+                                </li>
+                                <li class="categories-items categories-items-strong-b">
+                                    <div class="categories-items_img"><img src="/static/upload/svg/bitrix/templates/avtoshkola/img/categorii/category-2.svg"></div>
+                                    <div><p><a class="categories-item-strong" href="#"> B - легковые авто </a></p>
+                                        <p><a href="#"> В1 - квадроциклы </a></p></div>
+                                </li>
+                                <li class="categories-items categories-items-strong-b">
+                                    <div class="categories-items_img"><img src="/static/upload/svg/bitrix/templates/avtoshkola/img/categorii/category-3.svg"></div>
+                                    <div><p><a class="categories-item-strong" href="#"> C - грузовые авто </a></p></div>
+                                </li>
+                                <li class="categories-items categories-items-strong-b">
+                                    <div class="categories-items_img"><img src="/static/upload/svg/bitrix/templates/avtoshkola/img/categorii/category-4.svg"></div>
+                                    <div><p><a class="categories-item-strong" href="#"> D - автобусы </a></p></div>
+                                </li>
+                                <li class="categories-items categories-items-strong-b">
+                                    <div class="categories-items_img"><img src="/static/upload/svg/bitrix/templates/avtoshkola/img/categorii/category-5.svg"></div>
+                                    <div><p><a class="categories-item-strong" href="#"> BE - с прицепом </a></p>
+                                        <p><a href="#"> СЕ - с прицепом </a></p></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="header-nav-item "><a href="#" class="header-nav-item-link">Цены</a></li>
+                        <li class="header-nav-item "><a href="#" class="header-nav-item-link">Обучение-онлайн</a></li>
+                        <li class="header-nav-item "><a href="#" class="header-nav-item-link">Отзывы</a></li>
+                        <li class="header-nav-item "><a href="#" class="header-nav-item-link">Акции</a></li>
+                        <li class="header-nav-item "><a href="#" class="header-nav-item-link">Ускоренный курс</a></li>
+                        <li class="header-nav-item "><a href="#" class="header-nav-item-link">О нас</a>
+                            <ul class="categories-submenu">
+                                <li class="categories-item-wrap"><a class="categories-item" href="#">Новости</a></li>
+                                <li class="categories-item-wrap"><a class="categories-item" href="#">Об автошколе</a></li>
+                                <li class="categories-item-wrap"><a class="categories-item" href="#">Наша команда</a></li>
+                                <li class="categories-item-wrap"><a class="categories-item" href="#">Лицензии и документы</a></li>
+                                <li class="categories-item-wrap"><a class="categories-item" href="#">Вопрос-ответ</a></li>
+                                <li class="categories-item-wrap"><a class="categories-item" href="#">Вакансии</a></li>
+                            </ul>
+                        </li>
+                        <li class="header-nav-item "><a href="/" class="header-nav-item-link">- {{ product.name }}</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hidden-menu">
+                <div class="hidden-menu-wrapper"><a href="javascript:void(0);" class="close-btn"></a>
+                    <div class="hidden-menu-left"><p class="hidden-menu-title">Выберите ветку</p>
+                        <ul>
+                            <li><a class="hidden-menu-main-link active" href="#hidden-tab-10"> <i class="metro-icon-shadow-large"> <img
+                                    src="/static/upload/svg/bitrix/templates/avtoshkola/img/linii-metro/liniya-1.svg"></i> Сокольническая </a></li>
+
+                        </ul>
+                    </div>
+                    <div class="hidden-menu-right"><p class="hidden-menu-title">Выберите станцию</p>
+                        <div id="hidden-tab-10" class="hidden-menu-addition active">
+                            <ul class="hidden-tab-list">
+                                <li><a href="#"> Библиотека имени Ленина </a></li>
+                                <li><a href="#"> Юго-Западная </a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-lower">
+            <div class="container header-lower-container">
+                <div class="header-lower-left"><a href="#" target="_blank"><p class="header-lower-left-inside">Лицензия 86Л01 №0000001</p></a></div>
+                <ul class="header-lower-right">
+                    <li class="header-lower-right-item"><a href="#" class="header-lower-right-tel" onclick="ym(25082978, 'reachGoal', 'SEND_ZAY', {URL: document.location.href});  return true;">+7(902)814-23-09</a></li>
+                    <li class="header-lower-right-item header-lower-right-time">10:00 - 20:00 пн-пт</li>
+                    <li class="header-lower-right-item"><a href="mailto:nnu86@mail.ru" class="header-lower-right-mail">nnu86@mail.ru</a></li>
+                    <li class="header-lower-right-item submit-application"><a href="#" class="header-lower-right-submit">Оставить заявку</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header-mobile mobile">
+        <div class="header-mobile-top"><a href="javascript:void(0);" id="hamburger" class="burger">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </a> <a href="#" class="mobile-logo" title=""> <img class="mobile-logo-img" width="44" height="44" src="/static/upload/svg/bitrix/templates/avtoshkola/img/svg/logo-gl.svg"
+                                                            alt="Логотип автошколы">
+            <p class="mobile-logo-name"> Автошкола Чайковского </p></a>
+            <div class="mobile-call"><a href="#" class="mobile-call-link"></a></div>
+        </div>
+        <div class="header-mobile-middle">
+            <ul class="header-mobile-middle-wrapper">
+                <li class="mobile-category"><a href="#" class="header-mobile-middle-link" title=""> <i class="mobile-middle-icon mobile-middle-icon_1"></i> Категории </a></li>
+                <li><a href="#" class="header-mobile-middle-link" title=""><i class="mobile-middle-icon mobile-middle-icon_2"></i>Цены</a></li>
+                <li><a href="#" class="header-mobile-middle-link" title=""><i class="mobile-middle-icon mobile-middle-icon_3"></i>Ускоренный курс</a></li>
+                <li><a href="#" class="header-mobile-middle-link" title=""><i class="mobile-middle-icon mobile-middle-icon_4"></i>Вебинары</a></li>
+            </ul>
+        </div>
+        <div class="header-mobile-bottom"><a href="#" class="open-address-form header-mobile-bottom-link" title="">Адрес проведения занятий <i class="open-form-arrow"></i></a></div>
+        <div class="mobile-hidden-blocks mobile">
+            <div class="mobile-call-block"><a href="javascript:void(0);" class="call-close-btn close-btn" title=""></a>
+                <p class="mobile-call-title">Свяжитесь с нами</p>
+                <ul class="mobile-call-list">
+                    <li class="mobile-call-item"><a href="tel:8(495)5325507" class="mobile-call-item-link" title=""> <i class="mobile-call-item-icon mobile-call-item-icon_phone"></i> +7(902)814-23-09 </a></li>
+                    <li class="mobile-call-item"><a href="#" target="_blank" class="mobile-call-item-link" title=""> <i class="mobile-call-item-icon mobile-call-item-icon_telegram"></i>
+                        Telegram </a></li>
+                    <li class="mobile-call-item"><a href="#" class="mobile-call-item-link" title=""> <i class="mobile-call-item-icon mobile-call-item-icon_viber"></i> Viber </a></li>
+                    <li class="mobile-call-item"><a href="#" class="mobile-call-item-link" title=""> <i class="mobile-call-item-icon mobile-call-item-icon_whatsApp"></i>
+                        WhatsApp </a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu-block"><a href="javascript:void(0);" class="menu-close-btn close-btn" title=""></a>
+                <ul class="mobile-header-nav-list">
+                    <li class="mobile-header-nav-item mobile-driving-branches active"><a href="#" class="mobile-header-nav-item-link">Автошколы</a></li>
+                    <li class="mobile-header-nav-item mobile-category"><a href="#" class="mobile-header-nav-item-link">Категории</a></li>
+                    <li class="mobile-mobile-header-nav-item"><a href="#" class="mobile-header-nav-item-link">Цены</a></li>
+                    <li class="mobile-header-nav-item"><a href="#" class="mobile-header-nav-item-link">Обучение-онлайн</a></li>
+                    <li class="mobile-header-nav-item"><a href="#" class="mobile-header-nav-item-link">Отзывы</a></li>
+                    <li class="mobile-header-nav-item"><a href="#" class="mobile-header-nav-item-link">Акции</a></li>
+                    <li class="mobile-header-nav-item"><a href="#" class="mobile-header-nav-item-link">Ускоренный курс</a></li>
+                    <li class="mobile-header-nav-item"><a href="#" class="mobile-header-nav-item-link">Калькулятор</a></li>
+                    <li class="mobile-header-nav-item"><a href="javascript:void(0);" class="mobile-header-nav-item-link sub-list-toggle">О нас</a>
+                        <ul class="mobile-header-nav-list sub-list">
+                            <li class="mobile-header-nav-item"><a href="#" class="mobile-header-nav-item-link">Наша команда</a>
+                                <a href="#" class="mobile-header-nav-item-link">Вопрос-ответ</a>
+                                <a href="#" class="mobile-header-nav-item-link">Лицензии и документы</a>
+                                <a href="#" class="mobile-header-nav-item-link">Новости</a>
+                                <a href="#" class="mobile-header-nav-item-link">Об автошколе</a>
+                                <a href="#" class="mobile-header-nav-item-link">Вакансии</a></li>
+                        </ul>
+                    </li>
+                    <li class="mobile-header-nav-item"><a href="#" class="mobile-header-nav-item-link">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="mobile-category-block">
+                <ul class="categories-submenu"><span class="category-close-btn close-btn mobile"></span>
+                    <ul class="categories-submenu">
+                        <li class="categories-items categories-items-strong-b">
+                            <div class="categories-items_img"><img src="/static/upload/svg/bitrix/templates/avtoshkola/img/categorii/category-1.svg"></div>
+                            <div><p><a class="categories-item-strong" href="#"> А - Мотоциклы </a></p>
+                                <p><a href="#"> A1 - легкие мотоциклы </a></p>
+                                <p><a href="#"> M - мопеды </a></p>
+                                <p><a href="#"> Детская мотошкола </a></p></div>
+                        </li>
+                        <li class="categories-items categories-items-strong-b">
+                            <div class="categories-items_img"><img src="/static/upload/svg/bitrix/templates/avtoshkola/img/categorii/category-2.svg"></div>
+                            <div><p><a class="categories-item-strong" href="#"> B - легковые авто </a></p>
+                                <p><a href="#"> В1 - квадроциклы </a></p></div>
+                        </li>
+                        <li class="categories-items categories-items-strong-b">
+                            <div class="categories-items_img"><img src="/static/upload/svg/bitrix/templates/avtoshkola/img/categorii/category-3.svg"></div>
+                            <div><p><a class="categories-item-strong" href="#"> C - грузовые авто </a></p></div>
+                        </li>
+                        <li class="categories-items categories-items-strong-b">
+                            <div class="categories-items_img"><img src="/static/upload/svg/bitrix/templates/avtoshkola/img/categorii/category-4.svg"></div>
+                            <div><p><a class="categories-item-strong" href="#"> D - автобусы </a></p></div>
+                        </li>
+                        <li class="categories-items categories-items-strong-b">
+                            <div class="categories-items_img"><img src="/static/upload/svg/bitrix/templates/avtoshkola/img/categorii/category-5.svg"></div>
+                            <div><p><a class="categories-item-strong" href="#"> BE - с прицепом </a></p>
+                                <p><a href="#"> СЕ - с прицепом </a></p></div>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</header>
+

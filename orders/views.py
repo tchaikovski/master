@@ -15,7 +15,6 @@ import weasyprint
 import requests
 
 
-
 @staff_member_required
 def admin_order_pdf(request, order_id):
     order = get_object_or_404(Order, id=order_id)
@@ -58,7 +57,7 @@ def order_create(request):
             message = '{} оформлен заказ № - {} на курс обучения {} от {} {} телефон {}'.format(
                 order.created.strftime("%d.%m.%Y %H:%M:%S"), order.id, item['product'], order.first_name, order.last_name, order.phone)
 
-# TODO: настроить передачу переменных в телеграм
+            # TODO: настроить передачу переменных в телеграм
             requests.get('https://api.telegram.org/bot1839564984:AAEVzMw5xGAtYNlltFi8z-4LgE6eUeFO-8c/sendMessage?chat_id=-1001585724529&text={}'.format(message))
             return render(request, 'orders/order/created.html', {'order': order, 'product': item['product'], 'price': item['price'], 'quantity': item['quantity']})
     else:

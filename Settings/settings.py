@@ -14,7 +14,7 @@ SECRET_KEY = 'zo+xde69ewzwfvp1^1or97j*o+vm4@asa(oz^eqsfo1&_(bf@z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1:8000', '127.0.0.1']
 
 # Application definition
 
@@ -29,9 +29,10 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'coupons.apps.CouponsConfig',
-    # 'rosetta',
-    # 'parler',
-    # 'localflavor',
+    'pages.apps.PagesConfig',
+    'mptt',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
@@ -123,17 +124,20 @@ USE_TZ = True
 
 CART_SESSION_ID = 'cart'
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static/')
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/')
+]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_DB = 1
+
+
+MPTT_ADMIN_LEVEL_INDENT = 50   #you can replace 20 with some other number
