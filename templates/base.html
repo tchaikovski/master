@@ -4,13 +4,16 @@
 <html lang="ru">
 
 <head>
+
     <meta charset="utf-8"/>
-{#    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">#}
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="{% block description %}Описание базового шаблона{% endblock %}">
     <title>{% block title %}Главная автошкола {% endblock %}</title>
     <link rel="canonical" href="{{ request.path }}">
     <link href="{% static "css/base.css" %}" rel="stylesheet">
     <link href="/static/css/avtoschool.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/dist/css/bvi.min.css" type="text/css">
+{#    <link rel="stylesheet" href="{% static "/dist/css/bvi.min.css" %}" type="text/css">#}
 
 {% include 'head.html' %}
 </head>
@@ -29,6 +32,7 @@
 {##}
 {#2  {{ request.get_full_path }}#}
 
+<a href="#" class="bvi-open">Версия сайта для слабовидящих</a>
 
 <div id="subheader">
     <div class="cart">
@@ -61,7 +65,7 @@
 
 </main>
 {#</div>#}
-{#{% include 'footer.html' %}#}
+{% include 'footer.html' %}
 <div id="zayavka-modal">
     <form class="zayavka modal-wrap" onsubmit="ym(25082978, 'reachGoal', 'SEND_ZAY', {URL: document.location.href});  return true;">
         <div class="modal-submit reset-form"><a href="javascript:void(0);" class="close-btn"></a>
@@ -562,12 +566,13 @@
         </g>
     </symbol>
 </svg>
-<div style="display: none"><a class="rc-copyright" href="http://redconnect.ru">Обратный звонок RedConnect</a></div>
+{#<div style="display: none"><a class="rc-copyright" href="http://redconnect.ru">Обратный звонок RedConnect</a></div>#}
 <link rel="stylesheet" href="/static/css/avtoschool.css">
 <script src="/static/upload/js/custom.js"></script>
-
-
-
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/static/dist/js/js.cookie.js"></script>
+<script src="/static/dist/js/bvi-init.js"></script>
+<script src="/static/dist/js/bvi.min.js"></script>
 
 </body>
 </html>

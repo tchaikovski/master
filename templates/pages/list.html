@@ -8,7 +8,7 @@
         <h3>Страницы</h3>
         <ul>
             <li {% if not category %}class="selected"{% endif %}>
-                <a href="{% url "pages:product_list_page" %}">All</a>
+                <a href="{% url "school:product_list" %}">Курсы</a>
             </li>
             {% for c in categories %}
                 <li {% if category.slug == c.slug %}class="selected"

@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'coupons.apps.CouponsConfig',
     'pages.apps.PagesConfig',
+    'singlepage.apps.SinglepageConfig',
     'mptt',
     'django.contrib.sites',
     'django.contrib.sitemaps',

@@ -3,10 +3,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
-from Settings.sitemap import CategoryPageViewSitemap, ProductPageViewSitemap, ProductSchoolViewSitemap, CategorySchoolViewSitemap, KontaktViewSitemap
-
+from Settings.sitemap import CategoryPageViewSitemap, ProductPageViewSitemap, ProductSchoolViewSitemap, CategorySchoolViewSitemap
+from pages.views import product_list_page
 sitemaps = {
-    'schoolcategory': KontaktViewSitemap,
+    'schoolcategory': CategorySchoolViewSitemap,
     'schoolproduct': ProductSchoolViewSitemap,
     'pagecategory': CategoryPageViewSitemap,
     'pageproduct': ProductPageViewSitemap,
@@ -19,7 +19,9 @@ urlpatterns = [
     path('orders/', include('orders.urls', namespace='orders')),
     path('coupons/', include('coupons.urls', namespace='coupons')),
     path('courses/', include('school.urls', namespace='school')),
-    path('', include('pages.urls', namespace='pages')),
+    path('', include('singlepage.urls', namespace='singlepage')),
+    path('about/', include('pages.urls', namespace='pages')),
+    path('', product_list_page, name='product_list_page'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
 ]
 

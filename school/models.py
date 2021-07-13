@@ -1,6 +1,14 @@
 from django.db import models
 from django.urls import reverse
 
+# CATEGORY_CHOICES = [
+#     ('school/product/list.html', 'Base'),
+#     ('school/product/school_list.html', 'School'),
+#     ('school/product/staff_list.html', 'Staff'),
+#     ('school/product/list2.html', 'Quotes'),
+#     ('school/product/list3.html', 'Not name'),
+# ]
+
 
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
@@ -9,7 +17,7 @@ class Category(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     content = models.TextField(blank=True)
     updated = models.DateTimeField(auto_now=True)
-
+    # shablon = models.CharField(max_length=500, choices=CATEGORY_CHOICES)
 
     class Meta:
         ordering = ('name',)
@@ -47,3 +55,20 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse('school:product_detail', args=[self.category.slug, self.slug])
+#
+#
+# class Shablon(models.Model):
+#     name = models.CharField(max_length=250)
+#     attr = models.CharField(max_length=250)
+#     urltemplate = models.CharField(max_length=550)
+#
+#     class Meta:
+#         ordering = ('name',)
+#         verbose_name = 'Шаблон'
+#         verbose_name_plural = 'Шаблоны'
+#
+#     def __str__(self):
+#         return self.attr
+#
+#     def get_absolute_url(self):
+#         return reverse('school:product_list_by_category', args=[self.name, self.attr, self.urltemplate])

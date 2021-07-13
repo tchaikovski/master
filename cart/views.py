@@ -32,8 +32,9 @@ def cart_remove(request, product_id):
 def cart_detail(request):
     cart = Cart(request)
     #  изменение количества в корзине
-    for item in cart:
-        item['update_quantity_form'] = CartAddProductForm(
-            initial={'quantity': item['quantity'], 'update': True})
+    # for item in cart:
+    #     item['update_quantity_form'] = CartAddProductForm(
+    #         initial={'quantity': item['quantity'], 'update': True})
     coupon_apply_form = CouponApplyForm()
     return render(request, 'cart/detail.html', {'cart': cart, 'coupon_apply_form': coupon_apply_form})
+    # return render(request, 'orders/order/create.html', {'cart': cart, 'coupon_apply_form': coupon_apply_form})
