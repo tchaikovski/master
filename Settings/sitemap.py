@@ -3,11 +3,22 @@ from django.shortcuts import reverse
 from pages.models import Category, Pages
 from school.models import Category as SchoolCategory
 from school.models import Product as SchoolProduct
+from singlepage.models import Pages as SinglePages
 
+
+class SinglePagesViewSitemap(Sitemap):
+    changefreq = "weekly"
+    priority = 0.5
+
+    def items(self):
+        return SinglePages.objects.all()
+
+    def lastmod(self, item):
+        return item.updated
 
 
 class ProductSchoolViewSitemap(Sitemap):
-    changefreq = "always"
+    changefreq = "weekly"
     priority = 0.5
 
     def items(self):
@@ -16,8 +27,9 @@ class ProductSchoolViewSitemap(Sitemap):
     def lastmod(self, item):
         return item.updated
 
+
 class CategorySchoolViewSitemap(Sitemap):
-    changefreq = "always"
+    changefreq = "weekly"
     priority = 0.5
 
     def items(self):
@@ -27,9 +39,8 @@ class CategorySchoolViewSitemap(Sitemap):
         return item.updated
 
 
-
 class ProductPageViewSitemap(Sitemap):
-    changefreq = "always"
+    changefreq = "weekly"
     priority = 0.5
 
     def items(self):
@@ -40,7 +51,7 @@ class ProductPageViewSitemap(Sitemap):
 
 
 class CategoryPageViewSitemap(Sitemap):
-    changefreq = "always"
+    changefreq = "weekly"
     priority = 0.5
 
     def items(self):
@@ -48,4 +59,3 @@ class CategoryPageViewSitemap(Sitemap):
 
     def lastmod(self, item):
         return item.updated
-

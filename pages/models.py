@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from mptt.models import MPTTModel, TreeForeignKey
+from ckeditor_uploader.fields import RichTextUploadingField
 
 CATEGORY_CHOICES = [
     ('school/product/list.html', 'Base'),
@@ -44,7 +45,8 @@ class Pages(models.Model):
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
     title = models.CharField(max_length=170, blank=True, null=True)
     description = models.CharField(max_length=300, blank=True)
-    content = models.TextField(blank=True)
+    content = RichTextUploadingField(blank=True)
+    # content = models.TextField(blank=True)
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

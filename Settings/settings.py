@@ -1,6 +1,10 @@
 import os
+import sorl
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+import pymysql
+
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,8 +35,14 @@ INSTALLED_APPS = [
     'coupons.apps.CouponsConfig',
     'pages.apps.PagesConfig',
     'singlepage.apps.SinglepageConfig',
+    'cars.apps.CarsConfig',
     'mptt',
-    'django.contrib.sites',
+    'sorl.thumbnail',
+    'ckeditor',
+    'bootstrap5',
+    'django_bootstrap_breadcrumbs',
+    'ckeditor_uploader',
+    # 'django.contrib.sites',
     'django.contrib.sitemaps',
 ]
 
@@ -82,6 +92,18 @@ WSGI_APPLICATION = 'Settings.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'ugraavto',
+#         'USER': 'root',
+#         'PASSWORD': '00000000',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -130,6 +152,18 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+
+CKEDITOR_CONFIGS = {
+
+    'default': {
+
+     'toolbar': 'None'
+
+    },
+
+}
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

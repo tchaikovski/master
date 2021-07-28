@@ -6,7 +6,7 @@ from .models import Pages
 
 @admin.register(Pages)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug', 'available', 'created', 'updated']
+    list_display = ['name', 'slug', 'available', 'created', 'updated', 'shablon']
     list_filter = ['available', 'created', 'updated']
     list_editable = ['available']
     prepopulated_fields = {'slug': ('name',)}

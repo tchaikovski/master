@@ -1,17 +1,100 @@
 {% extends "base.html" %}
+{% load thumbnail %}
+
 {% load static %}
 {% block title %}
     {% if category %}{{ category.name }}{% else %}Products{% endif %}
 {% endblock %}
+
+{% block breadcrumbs %}
+    <section class="breadcrumbstop">
+        <div class="container">
+            <ul class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/" class="breadcrumbs-item">
+                        <span itemprop="name">Автошкола</span> </a>
+                    <meta itemprop="position" content="1">
+                </li>
+                 {% if category %}
+                  <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/courses/" class="breadcrumbs-item">
+                        <span itemprop="name">Курсы</span> </a>
+                    <meta itemprop="position" content="1">
+                </li>
+
+                 {% else %}
+                     <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                        <span itemprop="name">Курсы</span>
+                    <meta itemprop="position" content="1">
+                </li>
+                 {% endif %}
+
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">{{ category.name }}</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ul>
+        </div>
+    </section>
+{% endblock breadcrumbs %}
+
 {% block content %}
+    <div class="container">
+        {% for product in products %}
+
+
+            <div class="stock-banner stock-banner-large stock-banner-large_auto-listing">
+                <div class="stock-banner-large-context">
+                    <p class="stock-banner-large-caption">{% if category %}{{ category.name }}{% else %}Products{% endif %}</p>
+                    <a href="{{ product.get_absolute_url }}"><h2 class="stock-banner-large-title">{{ product.name }}</h2></a>
+                    <div class="stock-banner-large-coin">
+                        <div class="stock-banner-large-left">
+                            <span class="stock-banner-large-title-small">Цена обучения без скидок</span>
+                            <span class="stock-banner-large-summ">{{ product.price }} ₽ </span>
+                            <span class="stock-banner-large-title-small">Цена обучения со скидкой</span>
+                            <span class="stock-banner-large-summ">{{ product.price_sale }} ₽ </span>
+                        </div>
+                        <div class="stock-banner-large-right">
+                            <span class="stock-banner-large-title-small">Продолжительность</span>
+                            <span class="stock-banner-large-summ">{{ product.time }}</span>
+                        </div>
+                    </div>
+                    <div class="stock-banner-large-text">
+                        {% autoescape off %} {{ product.content|truncatewords:10 }}{% endautoescape %}
+
+                    </div>
+
+                    <a href="{{ product.get_absolute_url }}" class="banner-btn"> Оставить заявку <i class="bottom-icon-arrow velvet-bg"></i> </a>
+                </div>
+
+                <a href="{{ product.get_absolute_url }}">
+                    <div class="stock-banner-bg-img-wrap-list">
+                        <picture>
+                            <!--     <source media="(max-width: 750px)" srcset="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">-->
+                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" alt="" class="stock-banner-bg-img">
+
+                            {#              {% thumbnail product.image "500x290" as im %}#}
+                            {#    <img alt="" class="stock-banner-bg-img" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">#}
+                            {#{% endthumbnail %}#}
+
+
+                        </picture>
+                    </div>
+                </a>
+
+
+            </div>
+        {% endfor %}
+
+        <!--
+
     <div id="sidebar">
         <h3>Категории</h3>
 
-    тест
+        тест
 
 
-
-    тест
+        тест
 
 
         <ul>
@@ -26,9 +109,11 @@
             {% endfor %}
 
         </ul>
-    </div>
+    </div>-->
+
+        <!--
     <div id="main" class="product-list">
-        <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
+        <h1>{% if category %}{{ category.name }}{% else %}Products12{% endif %}</h1>
         {% for product in products %}
             <div class="item">
                 <a href="{{ product.get_absolute_url }}">
@@ -40,5 +125,6 @@
                 ${{ product.price }}
             </div>
         {% endfor %}
+    </div>  -->
     </div>
 {% endblock %}

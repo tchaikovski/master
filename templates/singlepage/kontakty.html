@@ -2,10 +2,47 @@
 {% load static %}
 {% block description %}{{ product.description }}{% endblock %}
 {% block title %}{{ product.title }}{% endblock %}
+{% block breadcrumbs %}
+    <section class="breadcrumbstop">
+        <div class="container">
+            <ul class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/" class="breadcrumbs-item">
+                        <span itemprop="name">Автошкола</span> </a>
+                    <meta itemprop="position" content="1">
+                </li>
 
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">{{ product.name }}</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ul>
+        </div>
+    </section>
+{% endblock breadcrumbs %}
 {% block content %}
+    <section class="our-contacts">
+        <div class="container">
+            <div class="section-heading"><h1 class="heading-title">Наши контакты</h1>
+                <p class="heading-caption">Юридический адрес: г.Ханты-Мансийск ул. Обская, 29</p>
+            </div>
+            <div class="contacts-top-banners">
+                <div class="contacts-top-banner"><p class="contacts-top-banner-title">Связь с нами</p>
+                    <p class="contacts-top-banner-supTitle">Телефон и почта</p>
+                    <div class="contacts-top-banner-contex"><p class="contacts-context-tel">+7(902) 814-23-09</p>
+                        <p class="contacts-context-mail">info@ugraavto.ru</p></div>
+                </div>
+                <div class="contacts-top-banner"><p class="contacts-top-banner-title">Офис</p>
+                    <div class="contacts-top-banner-contex"><p>ул. Обская, 29</p>
+                        <p>Часы работы: с 10:00 - 20:00, пн-пт</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
     <div class="product-detail">
-    <h1>{{ product.name}}kontakty</h1>
+        <h1>{{ product.name }}kontakty вава</h1>
         <img src="{% if product.image %}{{ product.image.url }}{% else %}
 {% static "img/no_image.png" %}{% endif %}">
         <h1>{{ product.name }}</h1>
@@ -15,4 +52,6 @@
 
         {{ product.content|linebreaks }}
     </div>
+-->
+
 {% endblock %}

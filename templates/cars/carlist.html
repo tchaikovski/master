@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Машины
+{% endblock %}
+
+
+
+{% block content %}
+
+    <section class="cars">
+        <div class="container">
+            <div class="section-heading"><p class="heading-title">Наши машины</p>
+                <p class="heading-caption">Учебные автомобили на филиалах автошколы</p>
+            </div>
+            <div class="cars-wrapper">
+                {% for car in products %}
+                    <div class="car-block car_h">
+                        <p class="car-year">{{ car.year }} года, гос номер {{ car.gos }}</p>
+                        <p class="car-name">{{ car.car_model }}</p>
+                        <p class="car-year">{{ car.transmission }}</p>
+
+                        <img src="{{ car.image.url }}" alt="{{ car.name }}">
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    {##}
+    {#    <div id="main" class="product-list">#}
+    {#        <h1>1111</h1>#}
+    {#    {% for car in products %}#}
+    {##}
+    {#            <div class="item">#}
+    {#                <a href="{{ car.get_absolute_url }}">#}
+    {#                    <img src="{% if car.image %}{{ car.image.url }}#}
+    {#{% else %}{% static "img/no_image.png" %}{% endif %}">#}
+    {#                </a>#}
+    {#                <a href="{{ car.get_absolute_url }}">{{ car.name }}</a>#}
+    {#                <br>#}
+    {##}
+    {#            </div>#}
+    {#        {% endfor %}#}
+    {#    </div>#}
+{% endblock %}

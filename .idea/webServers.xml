@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c8d9c355-7097-4290-9e75-488fb0faa676" name="DjangoAdressayta" url="https://django.adressayta.ru">
+        <fileTransfer rootFolder="/home/t/tchaikp7/django.adressayta.ru/public_html" accessType="SFTP" host="tchaikp7.beget.tech" port="22" sshConfigId="3b13ba71-d0e0-4e3b-9545-66c8df2a8258" sshConfig="tchaikp7_django@tchaikp7.beget.tech:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

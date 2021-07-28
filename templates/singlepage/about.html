@@ -3,9 +3,95 @@
 {% block description %}{{ product.description }}{% endblock %}
 {% block title %}{{ product.title }}{% endblock %}
 
+{% block breadcrumbs %}
+    <section class="breadcrumbstop">
+        <div class="container">
+            <ul class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/" class="breadcrumbs-item">
+                        <span itemprop="name">Автошкола</span> </a>
+                    <meta itemprop="position" content="1">
+                </li>
+
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">{{ product.name }}</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ul>
+        </div>
+    </section>
+{% endblock breadcrumbs %}
+
+
 {% block content %}
+
+
+    <section class="about-top">
+        <div class="container">
+            <div class="about-top-banner">
+                <div class="about-top-banner-context"><h1 class="about-top-title">{{ product.name }}</h1>
+                    <div class="about-top-text">{% autoescape off %} {{ product.content }} {% endautoescape %}</div>
+                </div>
+                <div class="about-top-banner-media"><img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about-graph">
+        <div class="container">
+            <div class="section-heading"><p class="heading-title">То, чем мы гордимся</p>
+
+            </div>
+            <div class="graph-wrapper">
+                <div class="graph-block graph-block_1"><p class="graph-number">> 20 000</p>
+                    <p class="graph-context">выпускников</p></div>
+                <div class="graph-block graph-block_1"><p class="graph-number">17 лет</p>
+                    <p class="graph-context">работы в городе</p></div>
+                <div class="graph-block graph-block_1"><p class="graph-number">!</p>
+                    <p class="graph-context">собственный автодром</p></div>
+                <div class="graph-block graph-block_1"><p class="graph-number">100%</p>
+                    <p class="graph-context">результат по окончанию</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="banner">
+        <div class="container">
+            <div class="banner-block">
+                <div class="banner-context"><p class="banner-text">Горячая линия автошколы</p>
+                    <p class="banner-numder">8(902)814-23-09</p>
+                    <p class="banner-caption">Звонок бесплатно!</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="cars">
+        <div class="container">
+            <div class="section-heading"><p class="heading-title">Наши машины</p>
+                <p class="heading-caption">Учебные автомобили автошколы</p></div>
+            <div class="cars-wrapper">
+
+
+                {% for car in cars %}
+                    <div class="car-block car_h">
+                        <p class="car-name">{{ car.car_model }}</p><p>{{ car.transmission }}</p>
+                        <p class="car-year">{{ car.year }} года</p>
+                        <p class="car-gos">Г/Н {{ car.gos }}</p>
+{#                        <p class="car-gos">Транссмисия </p>#}
+                        <img src="{{ car.image.url }}" alt="{{ car.name }}">
+
+
+{#                        <p class="car-year">гос номер {{ car.gos }}</p>#}
+
+                    </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section>
+    <!--
     <div class="product-detail">
-    <h1>{{ product.name}}about</h1>
+        <h1>{{ product.name }}kontakty вава</h1>
         <img src="{% if product.image %}{{ product.image.url }}{% else %}
 {% static "img/no_image.png" %}{% endif %}">
         <h1>{{ product.name }}</h1>
@@ -15,4 +101,6 @@
 
         {{ product.content|linebreaks }}
     </div>
+-->
+
 {% endblock %}

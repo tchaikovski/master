@@ -4,8 +4,67 @@
 {% block title %}{{ product.title }}{% endblock %}
 
 {% block content %}
+    <section class="about-top">
+        <div class="container container-singlepage">
+
+            <div class="about-top-banner">
+
+                <div class="about-top-text">    {% autoescape off %} {{ product.content }} {% endautoescape %}</div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="about-graph">
+        <div class="container">
+            <div class="section-heading"><p class="heading-title">То, чем мы гордимся</p>
+                <p class="heading-caption">Вебинары проходят онлайн, а значит в любом удобном для вас месте!</p></div>
+            <div class="graph-wrapper">
+                <div class="graph-block graph-block_1"><p class="graph-number">7 500</p>
+                    <p class="graph-context">уверенных выпускников</p></div>
+                <div class="graph-block graph-block_1"><p class="graph-number">20 лет</p>
+                    <p class="graph-context">опыт нашей работы</p></div>
+                <div class="graph-block graph-block_1"><p class="graph-number">30</p>
+                    <p class="graph-context">филиалов по Москве</p></div>
+                <div class="graph-block graph-block_1"><p class="graph-number">100%</p>
+                    <p class="graph-context">результат по окончанию</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="banner">
+        <div class="container">
+            <div class="banner-block">
+                <div class="banner-context"><p class="banner-text">Горячая линия автошколы</p>
+                    <p class="banner-numder">8(495)532-55-07</p>
+                    <p class="banner-caption">Звонок бесплатно!</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="cars">
+        <div class="container">
+            <div class="section-heading"><p class="heading-title">Наши машины</p>
+                <p class="heading-caption">Учебные автомобили на филиалах автошколы</p></div>
+            <div class="cars-wrapper">
+                <div class="car-block car_h"><p class="car-year">2015</p>
+                    <p class="car-name">Hyundai i30</p> <img src="/static/ammina.optimizer/png/q95/upload/iblock/a14/a14fd40066fb34beb19d2b231918ce43.png" alt="Hyundai i30"></div>
+                <div class="car-block car_h"><p class="car-year">2016</p>
+                    <p class="car-name">Opel Astra</p> <img src="/static/ammina.optimizer/png/q95/upload/iblock/19b/19bcc39bed4ea0cb68183012c8c4596b.png" alt="Opel Astra"></div>
+                <div class="car-block car_h"><p class="car-year">2014</p>
+                    <p class="car-name">Ford Focus</p> <img src="/static/ammina.optimizer/png/q95/upload/iblock/2ba/2baff932e2032d9d24f59d3566e90686.png" alt="Ford Focus"></div>
+                <div class="car-block car_h"><p class="car-year">2019</p>
+                    <p class="car-name">Chevrolet Aveo</p> <img src="/static/ammina.optimizer/png/q95/upload/iblock/04e/04e86d18e49cfa90e5ca47995a9f5436.png" alt="Chevrolet Aveo"></div>
+                <div class="car-block car_h"><p class="car-year">2015</p>
+                    <p class="car-name">Kia-Rio</p> <img src="/static/ammina.optimizer/png/q95/upload/iblock/846/8467e04527b7a80aada73eef9ec4b356.png" alt="Kia-Rio"></div>
+                <div class="car-block car_test-drive"><p class="car-supTitle velvet-color">Бесплатный</p>
+                    <p class="car-title">Тест-драйв</p>
+                    <p class="car-text">Оцените все преимущества нашей автошколы лично, 30 мин тест-драйв с инструктором бесплатно!</p> <a href="../test-drive/index.html" class="btn-link">Подробнее<i
+                            class="bottom-icon-arrow velvet-bg"></i></a></div>
+            </div>
+        </div>
+    </section>
+<!--
     <div class="product-detail">
-    <h1>{{ product.name}}singlepage</h1>
+        <h1>{{ product.name }}kontakty вава</h1>
         <img src="{% if product.image %}{{ product.image.url }}{% else %}
 {% static "img/no_image.png" %}{% endif %}">
         <h1>{{ product.name }}</h1>
@@ -15,4 +74,6 @@
 
         {{ product.content|linebreaks }}
     </div>
+-->
+
 {% endblock %}

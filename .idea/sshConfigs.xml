@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;hostKeyVerifier&quot;:{&quot;hashKnownHosts&quot;:true,&quot;stringHostKeyChecking&quot;:&quot;ASK&quot;}}" host="tchaikp7.beget.tech" id="3b13ba71-d0e0-4e3b-9545-66c8df2a8258" port="22" nameFormat="DESCRIPTIVE" username="tchaikp7_django" />
+    </configs>
+  </component>
+</project>
