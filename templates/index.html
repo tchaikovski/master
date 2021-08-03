@@ -1,35 +1,126 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Тайтл индекс хтмл{% endblock %}
-{% block description %} Описание главной страницы{% endblock %}
+{% block title %}Негосударственное учебное заведение Чайковского в Ханты-Мансийске{% endblock %}
+{% block description %}Негосударственное учебное заведение Чайковского в Ханты-Мансийске. Обучение по специальностям.{% endblock %}
+{% block breadcrumbs %}{% endblock %}
 {% block content %}
-    <div id="sidebar">
-        <h3>Categories</h3>
-        <ul>
-            <li {% if not category %}class="selected"{% endif %}>
-                <a href="{% url "school:product_list" %}">All</a>
-            </li>
-            {% for c in categories %}
-                <li {% if category.slug == c.slug %}class="selected"
-                    {% endif %}>
-                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-                </li>
-            {% endfor %}
 
-        </ul>
-    </div>
-    <div id="main" class="product-list">
-        <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
-        {% for product in products %}
-            <div class="item">
-                <a href="{{ product.get_absolute_url }}">
-                    <img src="{% if product.image %}{{ product.image.url }}
-{% else %}{% static "img/no_image.png" %}{% endif %}">
-                </a>
-                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                <br>
-                ${{ product.price }}
+
+    <section class="main-slider">
+        <div class="container">
+            <div class="main-swiper swiper-container-fade swiper-container-initialized swiper-container-horizontal">
+                <div class="swiper-wrapper">
+
+                    {% for slid in homepage %}
+
+
+
+                        <div class="swiper-slide main-swiper-slide main-slide-block-1 swiper-slide-active">
+                            <div class="main-slide-block">
+
+                                <p class="main-slide-block-title">{{ slid.name }}</p>
+                                {{ slid.content }}
+
+
+                            </div>
+                            <div class="main-slide-img"><img src="/media/{{ slid.image }}" alt="{{ slid.name }}"></div>
+                            <a href="{{ slid.url }}" class="main-slider-btn"> Подробнее <i class="bottom-icon-arrow velvet-bg"></i> </a>
+
+                        </div>
+                    {% endfor %}
+
+                    <div class="main-swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
             </div>
-        {% endfor %}
-    </div>
+        </div>
+    </section>
+
+
+
+        <section class="best-price" id="aside1">
+            <div class="container">
+                <div class="section-heading wow fadeIn">
+                    <p class="heading-title">Лучшие цены</p>
+                    <p class="heading-caption">Цены на обучение теории включают весь пакет документов для прохождения экзаменов в ГАИ Москвы</p>
+                    <a href="#" class="heading-btn">Все цены <i class="bottom-icon-arrow velvet-bg"></i></a></div>
+                <div class="best-price-wrapper desk">
+    {% for slid in view.school_cat %}
+
+
+
+                    <a href="/courses/{{ slid.slug }}" class="best-price-block best-price-block_a wow zoomIn slow">
+                        <img src="/media/{{ slid.image }}" alt="{{ slid.name }}"></a>
+{% endfor %}
+
+                </div>
+                <div class="best-price-wrapper mob">
+
+                        {% for slid in view.school_cat %}
+
+                    <a href="/courses/{{ slid.slug }}" class="best-price-block best-price-block_a"> <img
+                        src="/media/{{ slid.image }}" alt="{{ slid.name }}"></a>
+{% endfor %}
+
+                </div>
+            </div>
+        </section>
+
+
+
+    {% for slid in view.all_settings %}
+                <section class="large-cards">
+            <div class="container">
+                <div class="large-cards-wrapper">
+                    <div class="large-card large-card_yellow large-card_test-drive"><p class="large-card-title">{{ slid.name_prime_block }}</p>
+                        <p class="large-card-text">{{ slid.content_prime_block }}</p>
+<a href="{{ slid.url_prime_block }}" class="large-card-btn">Подробнее<i class="bottom-icon-arrow white-bg"></i></a>
+                    </div>
+                    <div class="large-card large-card_velvet large-card_year-round"><p class="large-card-title">{{ slid.name_second_block }}</p>
+                        <p class="large-card-text">{{ slid.content_second_block }}</p>
+                        <a href="{{ slid.url_second_block }}" class="large-card-btn">Подробнее<i class="bottom-icon-arrow white-bg"></i></a></div>
+                </div>
+            </div>
+        </section>
+
+    {% endfor %}
+
+
+{% include 'block_kontakt.html' %}
+
+
+        <section class="seo">
+            <div class="container">
+                <div class="seo-container">
+<div class="wow fadeIn slow" >
+                 {% autoescape off %}
+                     {% for content in view.all_settings %}
+                         {{ content.content }}
+                    {% endfor %}
+ {% endautoescape %}
+
+                   </div>
+            </div>
+            </div>
+        </section>
+
+
+        <section class="question" id="aside4">
+            <div class="container">
+                <div class="question-heading heading-baloon-icon"><p class="question-title">Остались вопросы?</p>
+                    <p class="question-caption">Можете задать свой вопрос, воспользовавшись формой. </p>
+                    <p class="question-caption">Мы ответим в течение 1 рабочего дня</p></div>
+                <form id="question-form">
+                    <div class="question-form reset-form"><input class="question-item-small" type="text" name="NAME" value="" placeholder="Имя" required=""><input class="question-item-small phone-mask" type="tel"
+                                                                                                                                                                   name="PHONE" value="" placeholder="Телефон"
+                                                                                                                                                                   required=""><input class="question-item-small"
+                                                                                                                                                                                      type="email" name="EMAIL" value=""
+                                                                                                                                                                                      placeholder="E-mail"
+                                                                                                                                                                                      required=""><input
+                            class="question-item-large" type="text" name="QUESTION" value="" placeholder="Задайте вопрос" required=""></div>
+                    <button class="question-btn" type="submit">Отправить<i class="bottom-icon-arrow velvet-bg"></i></button>
+                </form>
+            </div>
+        </section>
+
 {% endblock %}

@@ -4,7 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from Settings.sitemap import CategoryPageViewSitemap, ProductPageViewSitemap, ProductSchoolViewSitemap, CategorySchoolViewSitemap, SinglePagesViewSitemap
-from pages.views import product_list_page
+from django.views.generic import TemplateView
+
 sitemaps = {
     'singlepages': SinglePagesViewSitemap,
     'schoolcategory': CategorySchoolViewSitemap,
@@ -21,11 +22,14 @@ urlpatterns = [
     path('coupons/', include('coupons.urls', namespace='coupons')),
     path('courses/', include('school.urls', namespace='school')),
     path('cars/', include('cars.urls', namespace='cars')),
+    path('news/', include('news.urls', namespace='news')),
+    # path('', include('pages.urls'), name='product_list_page'),
     path('', include('singlepage.urls', namespace='singlepage')),
-    path('about/', include('pages.urls', namespace='pages')),
-    path('', product_list_page, name='product_list_page'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+    path('robots.txt', TemplateView.as_view(template_name='robots.txt'), name='robots'),
+    path('about/', include('pages.urls', namespace='pages')),
+
 ]
 
 

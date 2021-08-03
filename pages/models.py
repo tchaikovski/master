@@ -21,7 +21,6 @@ class Category(MPTTModel):
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True, on_delete=models.CASCADE)
     updated = models.DateTimeField(auto_now=True)
 
-
     class MPTTMeta:
         order_insertion_by = ['name']
 
@@ -39,7 +38,7 @@ class Category(MPTTModel):
 
 
 class Pages(models.Model):
-    category = TreeForeignKey('Category', null=True, blank=True, on_delete=models.CASCADE)
+    category = TreeForeignKey('Category', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)

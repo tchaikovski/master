@@ -3,6 +3,7 @@ from mptt.admin import MPTTModelAdmin
 from mptt.admin import DraggableMPTTAdmin
 from .models import Category, Pages
 
+admin.site.register(Category, DraggableMPTTAdmin )
 
 @admin.register(Pages)
 class ProductAdmin(admin.ModelAdmin):
@@ -14,15 +15,6 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(Category, DraggableMPTTAdmin )
-
-
-
-
-
-
-
-# admin.site.register(Product)
 
 
 

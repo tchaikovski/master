@@ -1,14 +1,20 @@
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import DetailView, ListView
+from mptt.forms import TreeNodeChoiceField
 from .models import Category, Pages
 from school.models import Category as SchoolCategory
 from school.models import Product as SchoolProduct
 
+
+def index(request):
+    return render(request, 'index.html')
 
 
 def product_list_page(request, category_slug=None):
     category = None
     categoryschool = SchoolCategory.objects.all()
     categories = Category.objects.all()
+    # categories = TreeNodeChoiceField(queryset=Category.objects.all())
     products = Pages.objects.filter(available=True)
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
@@ -20,9 +26,6 @@ def product_detail_page(request, slug, category_slug=None):
     category = None
     product = get_object_or_404(Pages, slug=slug, available=True)
     return render(request, 'pages/detail.html', {'product': product, 'slug': slug, 'category_slug': category_slug})
-
-
-
 
 #
 #

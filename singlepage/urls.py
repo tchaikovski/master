@@ -2,9 +2,15 @@ from django.urls import path
 from django.views.generic import TemplateView
 
 from . import views
+from .views import HomePage
+
 
 app_name = 'singlepage'
 urlpatterns = [
+    # path('', views.home_page, name='home_page'),
+    path('', HomePage.as_view(), name='news_list'),
+    # path('<slug:slug>/', NewsDetailView.as_view(), name='news'),
+
     path('<slug:slug>/', views.product_detail_single_page, name='product_detail_page_single'),
     # path('<slug:slug>/', views.contact, name='page'),
     # path('<slug:category_slug>/', views.product_list_page, name='product_list_page_by_category'),

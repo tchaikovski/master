@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'singlepage.apps.SinglepageConfig',
     'cars.apps.CarsConfig',
+    'news.apps.NewsConfig',
     'mptt',
     'sorl.thumbnail',
     'ckeditor',
@@ -72,8 +73,7 @@ ROOT_URLCONF = 'Settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -3,8 +3,11 @@ from django.views.generic import TemplateView
 
 from . import views
 
+
 app_name = 'pages'
 urlpatterns = [
+    path('', views.index, name='index'),
+    # path('', HomePageSlider.as_view(), name='home'),
     # path('<slug:slug>/', views.product_detail_page_single, name='product_detail_page_single'),
     # path('<slug:slug>/', views.contact, name='page'),
     path('<slug:category_slug>/', views.product_list_page, name='product_list_page_by_category'),

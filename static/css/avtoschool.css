@@ -7004,7 +7004,7 @@ section.breadcrumbstop {
     padding-bottom: 0rem;
 }
 section {
-    padding-top: 6rem;
+    padding-top: 0rem;
     padding-bottom: 12rem;
 }
 
@@ -14843,7 +14843,6 @@ a:hover .play-btn-icon {
 
     .price-form .filter-item:first-of-type .filter-handler_price::before {
         position: absolute;
-        content: "Категория прав";
         top: .7rem;
         font-size: 1.8rem;
         color: #a4a4a4;

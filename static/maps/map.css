@@ -1,0 +1,29 @@
+
+.map-search {
+    margin-bottom: 10px;
+}
+
+.map-search:after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+
+.map-widget button.search {
+    min-width: 120px;
+    float: right;
+    margin-top: 0;
+}
+
+.map-widget .map-search input.input-text {
+    min-width: 500px;
+}
+
+.map-widget .map-loader {
+    text-align: center;
+    padding: 30px;
+}
+
+.map-area {
+    height: 300px;
+}

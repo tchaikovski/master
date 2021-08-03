@@ -1,42 +1,201 @@
 {% extends "base.html" %}
 {% load static %}
+{% load mptt_tags %}
 {% block title %}
     {% if category %}{{ category.name }}{% else %}Страницы{% endif %}
 {% endblock %}
-{% block content %}
-    <div id="sidebar">
-        <h3>Страницы</h3>
-        <ul>
-            <li {% if not category %}class="selected"{% endif %}>
-                <a href="{% url "school:product_list" %}">Курсы</a>
-            </li>
-            {% for c in categories %}
-                <li {% if category.slug == c.slug %}class="selected"
-                    {% endif %}>
-                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-                </li>
-            {% endfor %}
-        {% for c in categoriesshop %}
-                <li {% if category.slug == c.slug %}class="selected"
-                    {% endif %}>
-                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-                </li>
-            {% endfor %}
 
-        </ul>
-    </div>
-    <div id="main" class="product-list">
-        <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
-        {% for product in products %}
-            <div class="item">
-                <a href="{{ product.get_absolute_url }}">
-                    <img src="{% if product.image %}{{ product.image.url }}
-{% else %}{% static "img/no_image.png" %}{% endif %}">
-                </a>
-                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                <br>
-                ${{ product.price }}
+
+{% block content %}
+
+
+    <section class="address">
+        <div class="container">
+            <div class="address-heading">
+                <p class="address-choice"> Выберите категорию прав, вид теории и коробку передач </p>
             </div>
-        {% endfor %}
-    </div>
+
+            {##}
+            {#            {% recursetree categories %}#}
+            {##}
+            {#                {% if node.level == 0 %}#}
+            {#                    {{ node.name }}#}
+            {#                {% else %}#}
+            {#                    {{ node.get_absolute_url }}"> {{ node.name }}#}
+            {#                {% endif %}#}
+            {#                {% if not node.is_leaf_node %}#}
+            {##}
+            {#                    {% if node.level < 1 %}#}
+            {#                        <ul class="base-list">#}
+            {#                            1 {{ children }}#}
+            {#                        </ul>#}
+            {#                    {% else %}#}
+            {#                        <ul>#}
+            {#                            2 {{ children }}#}
+            {#                        </ul>#}
+            {#                    {% endif %}#}
+            {#                {% endif %}#}
+            {##}
+            {#                {% if category.get_absolute_url == node.get_absolute_url %}#}
+            {#                    {{ children }}#}
+            {#                {% endif %}#}
+            {##}
+            {##}
+            {#            {% endrecursetree %}#}
+            {##}
+            {#         {% recursetree categories %}#}
+            {#             {% if node.is_leaf_node %}#}
+            {#                Нет подкатегория  {{ node.name }}#}
+            {#                 {% else %}#}
+            {#                Есть подкатегории {{ node.name }}#}
+            {#             {% endif %}#}
+            {#<p>#}
+            {##}
+            {#</p>#}
+            {#            {% if not node.is_leaf_node %}#}
+            {##}
+            {#                    {{ children }}#}
+            {##}
+            {#            {% endif %}#}
+            {##}
+            {#    {% endrecursetree %}#}
+
+
+            <div class="price-form">
+                {% recursetree categories %}
+
+
+
+                    <div class="price-col-small filter-item filter-item filter-item_address">
+                        {% if not node.is_leaf_node %}
+                            <a class="filter-handler filter-handler_price" href="javascript:void(0);">{{ node.name }}</a>
+                        {% else %}
+                            <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
+                        {% endif %}
+
+
+                        {% if not node.is_leaf_node %}
+                            <div class="filter-dd filter-dd_address">
+                                <ul>
+                                    <li>
+                                        <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
+                                    </li>
+                                    {{ children }}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endrecursetree %}
+
+
+                <!--   <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="Показать цену"></div> -->
+            </div>
+
+{% if category %}
+<div class="address-heading">
+    <h1>{{ category.name }}</h1>
+            </div>
+{% endif %}
+
+            <div class="contacts-top-banners">
+                <div class="pokazat-tceny">
+                    {% for product in products %}
+                        <div class="triple-banner">
+     <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                        <div class="triple-banner-title"><p class="triple-banner-supTitle">{{ product.name }}</p>
+
+                        </div>
+                        <div class="triple-banner-body">
+                            {% autoescape off %} {{ product.content|truncatewords:10 }} {% endautoescape %}
+                            <a href="{{ product.get_absolute_url }}" class="banner-btn submit-application">{{ product.name }}
+                                <i class="bottom-icon-arrow velvet-bg"></i></a>
+                        </div>
+                    </div>
+
+
+
+
+{#                            <a href="{{ product.get_absolute_url }}">#}
+{#                                <img src="{% if product.image %}{{ product.image.url }}#}
+{#    {% else %}{% static "img/no_image.png" %}{% endif %}">#}
+{#                            </a>#}
+{#                            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>#}
+{#                            <br>#}
+{#                            ${{ product.price }}#}
+
+                    {% endfor %}
+
+
+
+                </div>
+            </div>
+            <div class="price-included"><p class="price-included-title"> В стоимость курсов включено: </p>
+                <ul class="price-included-list">
+                    <li>
+                        <ul>
+                            <li>Теоретический курс</li>
+                            <li>Персональный менеджер</li>
+                            <li>ГСМ (бензин) бесплатно</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>Свидетельство об окончании автошколы</li>
+                            <li>Выезд менеджера для заключения договора (бесплатно)</li>
+                            <li>Пакет документов для сдачи в ГИБДД</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>Сопровождение до получения прав</li>
+                            <li>Сдача внутреннего экзамена бесплатно</li>
+                            <li>Проведение внутренних экзаменов</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{##}
+{##}
+{#    <div id="sidebar">#}
+{#        <h3>Страницы</h3>#}
+{#        <ul>#}
+{#            <li {% if not category %}class="selected"{% endif %}>#}
+{#                <a href="{% url "school:product_list" %}">Курсы</a>#}
+{#            </li>#}
+{##}
+{##}
+{#            {% for c in categories %}#}
+{#                <li {% if category.slug == c.slug %}class="selected"{% endif %}>#}
+{##}
+{#                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>#}
+{#                </li>#}
+{#            {% endfor %}#}
+{##}
+{##}
+{##}
+{#            {% for c in categoriesshop %}#}
+{#                <li {% if category.slug == c.slug %}class="selected"#}
+{#                    {% endif %}>#}
+{#                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>#}
+{#                </li>#}
+{#            {% endfor %}#}
+{##}
+{#        </ul>#}
+{#    </div>#}
+{#    <div id="main" class="product-list">#}
+{#        <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>#}
+{#        {% for product in products %}#}
+{#            <div class="item">#}
+{#                <a href="{{ product.get_absolute_url }}">#}
+{#                    <img src="{% if product.image %}{{ product.image.url }}#}
+{#    {% else %}{% static "img/no_image.png" %}{% endif %}">#}
+{#                </a>#}
+{#                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>#}
+{#                <br>#}
+{#                ${{ product.price }}#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#    </div>#}
 {% endblock %}

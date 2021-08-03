@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ news.title }}{% endblock %}
+{% block description %}{{ news.description }}{% endblock %}
+{% block breadcrumbs %}
+    <section class="breadcrumbstop">
+        <div class="container">
+            <ul class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/" class="breadcrumbs-item">
+                        <span itemprop="name">Автошкола</span> </a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/news/" class="breadcrumbs-item">
+                        <span itemprop="name">Новости</span> </a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/courses/{{ category_slug }}" class="breadcrumbs-item">
+                        <span itemprop="name">{{ product.category }}</span> </a>
+                    <meta itemprop="position" content="3">
+                </li>
+
+
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">{{ product.name }}</span>
+                    <meta itemprop="position" content="4">
+                </li>
+            </ul>
+        </div>
+    </section>
+{% endblock breadcrumbs %}
+{% block content %}
+
+    <section class="seo">
+        <div class="container">
+            <div class="seo-container">
+                <h1>{{ news.name}}</h1>
+                <div class="wow fadeIn slow">
+                    {{ news.content }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

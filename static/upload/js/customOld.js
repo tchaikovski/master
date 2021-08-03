@@ -12524,24 +12524,24 @@ $(document).ready(function () {
     });
 
 
-    $('.main-slider-btn').each(function () {
-        var attr = $(this).attr('href');
-        if (attr == '#') {
-            $(this).addClass('ostavit-zayavku');
-        }
-    });
+    // $('.main-slider-btn').each(function () {
+    //     var attr = $(this).attr('href');
+    //     if (attr == '#') {
+    //         $(this).addClass('ostavit-zayavku');
+    //     }
+    // });
 
-    $('body').on('click', '.ostavit-zayavku', function (event) {
-        event.preventDefault();
-        var btn = $(this);
-        $('#zayavka-modal').addClass('active');
-        $('.overlay').fadeIn(200,
-            function () {
-                $('.modal-submit').addClass('active');
-                $('html, header').width($('html, header').width());
-                $('html').css('overflow', 'hidden');
-            });
-    });
+    // $('body').on('click', '.ostavit-zayavku', function (event) {
+    //     event.preventDefault();
+    //     var btn = $(this);
+    //     $('#zayavka-modal').addClass('active');
+    //     $('.overlay').fadeIn(200,
+    //         function () {
+    //             $('.modal-submit').addClass('active');
+    //             $('html, header').width($('html, header').width());
+    //             $('html').css('overflow', 'hidden');
+    //         });
+    // });
 
 
     $('.submit-application').click(function () {

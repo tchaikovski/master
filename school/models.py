@@ -17,6 +17,7 @@ class Category(models.Model):
     title = models.CharField(max_length=170, blank=True, null=True)
     description = models.CharField(max_length=300, blank=True, null=True)
     slug = models.SlugField(max_length=200, unique=True)
+    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True, verbose_name='Изображение для Категории на главной')
     content = models.TextField(blank=True)
     updated = models.DateTimeField(auto_now=True)
 
