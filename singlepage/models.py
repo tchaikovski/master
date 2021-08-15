@@ -4,7 +4,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 CATEGORY_CHOICES = [
     ('singlepage/singlepage.html', 'All'),
-    ('singlepage/singlepage1.html', 'NotWork'),
+    ('singlepage/page-files.html', 'Files'),
     ('singlepage/maps.html', 'MapsYandex'),
     ('singlepage/kontakty.html', 'Contakt'),
     ('singlepage/about.html', 'About'),
@@ -18,7 +18,7 @@ class Pages(models.Model):
     title = models.CharField(max_length=170, blank=True, null=True)
     description = models.CharField(max_length=300, blank=True)
     content = RichTextUploadingField(blank=True)
-    # content = models.TextField(blank=True)
+    code = models.TextField(blank=True)
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

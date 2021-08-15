@@ -109,7 +109,8 @@ $('.offer-close-btn').click(function (event) {
 // маска для телефона
 $(document).ready(function () {
     // $(".phone-mask").mask("+ 7 ( 999 ) 999 99 - 99");
-    $(".phone-mask").mask("+ 7 (999)  999-99-99");
+    // $("id_phone").mask("+ 7 (999)  999-99-99");
+    $('input[name="phone"]').mask("+ 7 (999)  999-99-99");
 });
 
 /*слайдер на главной верхний*/

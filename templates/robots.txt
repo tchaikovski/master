@@ -1,1 +1,2 @@
-ksjdf;ksa
+User-agent: *
+Disallow: /

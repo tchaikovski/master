@@ -6,10 +6,10 @@ from coupons.models import Coupon
 
 
 class Order(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50, blank=True)
-    phone = models.CharField(max_length=50)
-    email = models.EmailField(blank=True)
+    first_name = models.CharField(max_length=50, verbose_name='Имя')
+    last_name = models.CharField(max_length=50, blank=True, verbose_name='Фамилия')
+    phone = models.CharField(max_length=50, verbose_name='Телефон')
+    email = models.EmailField(blank=True, verbose_name='E-Mail')
     address = models.CharField(max_length=250, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

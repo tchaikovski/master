@@ -45,25 +45,38 @@
                     <p class="heading-caption">Цены на обучение теории включают весь пакет документов для прохождения экзаменов в ГАИ Москвы</p>
                     <a href="#" class="heading-btn">Все цены <i class="bottom-icon-arrow velvet-bg"></i></a></div>
                 <div class="best-price-wrapper desk">
-    {% for slid in view.school_cat %}
+
+                    <div class="news-blocks">
+
+                         {% for slid in view.school_cat %}
+                        <div class="lesson-block-item">
+                            <a href="/courses/{{ slid.slug }}/"><img src="/media/{{ slid.image }}" alt="{{ slid.name }}">
+
+                            <h3>{{ slid.name }}</h3>
+{#                                <i class="bottom-icon-arrow"></i>#}
+                            </a></div>
+
+                        {% endfor %}
+
+
+                    </div>
+
+
+{#                    {% for slid in view.school_cat %}#}
+{##}
+{##}
+{##}
+{#                    <a href="/courses/{{ slid.slug }}" class="best-price-block best-price-block_a wow zoomIn slow">#}
+{#                        <img src="/media/{{ slid.image }}" alt="{{ slid.name }}"></a>#}
+{#{% endfor %}#}
 
 
 
-                    <a href="/courses/{{ slid.slug }}" class="best-price-block best-price-block_a wow zoomIn slow">
-                        <img src="/media/{{ slid.image }}" alt="{{ slid.name }}"></a>
-{% endfor %}
 
                 </div>
-                <div class="best-price-wrapper mob">
 
-                        {% for slid in view.school_cat %}
-
-                    <a href="/courses/{{ slid.slug }}" class="best-price-block best-price-block_a"> <img
-                        src="/media/{{ slid.image }}" alt="{{ slid.name }}"></a>
-{% endfor %}
-
-                </div>
             </div>
+
         </section>
 
 
@@ -105,22 +118,6 @@
         </section>
 
 
-        <section class="question" id="aside4">
-            <div class="container">
-                <div class="question-heading heading-baloon-icon"><p class="question-title">Остались вопросы?</p>
-                    <p class="question-caption">Можете задать свой вопрос, воспользовавшись формой. </p>
-                    <p class="question-caption">Мы ответим в течение 1 рабочего дня</p></div>
-                <form id="question-form">
-                    <div class="question-form reset-form"><input class="question-item-small" type="text" name="NAME" value="" placeholder="Имя" required=""><input class="question-item-small phone-mask" type="tel"
-                                                                                                                                                                   name="PHONE" value="" placeholder="Телефон"
-                                                                                                                                                                   required=""><input class="question-item-small"
-                                                                                                                                                                                      type="email" name="EMAIL" value=""
-                                                                                                                                                                                      placeholder="E-mail"
-                                                                                                                                                                                      required=""><input
-                            class="question-item-large" type="text" name="QUESTION" value="" placeholder="Задайте вопрос" required=""></div>
-                    <button class="question-btn" type="submit">Отправить<i class="bottom-icon-arrow velvet-bg"></i></button>
-                </form>
-            </div>
-        </section>
+
 
 {% endblock %}

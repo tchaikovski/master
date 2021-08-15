@@ -21,7 +21,7 @@
                     <meta itemprop="position" content="2">
                 </li>
                 <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                    <a itemprop="item" href="/courses/{{ category_slug }}" class="breadcrumbs-item">
+                    <a itemprop="item" href="/courses/{{ category_slug }}/" class="breadcrumbs-item">
                         <span itemprop="name">{{ product.category }}</span> </a>
                     <meta itemprop="position" content="3">
                 </li>
@@ -40,7 +40,6 @@
 {% block content %}
 
 
-    <a name="save"></a>
     <section class="auto">
         <div class="container">
             <div class="stock-banner stock-banner-large stock-banner-large_auto">
@@ -50,19 +49,21 @@
                         <div class="stock-banner-large-left">
                             <span class="stock-banner-large-title-small">Стоимость</span>
                             <span class="stock-banner-large-summ">{{ product.price }} ₽</span>
+                            {% if  product.price_sale %}
                             <span class="stock-banner-large-title-small">Цена обучения со скидкой</span>
                             <span class="stock-banner-large-summ">{{ product.price_sale }} ₽</span>
+                            {% endif %}
 
                         </div>
+{% if product.time %}
                         <div class="stock-banner-large-right">
                             <span class="stock-banner-large-title-small">Продолжительность обучения</span>
                             <span class="stock-banner-large-summ">{{ product.time }}</span>
 
                         </div>
+                  {% endif %}
                     </div>
-                    <div class="stock-banner-large-text">
-                        {#                        <p>{{ product.content|truncatewords:10 }}</p>#}
-                    </div>
+
 
                     <form action="{% url "cart:cart_add" product.id %}" method="post">
                         {#                            {% bootstrap_form form %}#}
@@ -72,7 +73,6 @@
                         <input type="submit" class="button-.price-col-small-submit input" value="Записаться на курс">
 
                     </form>
-                    {#                <a href="javascript:void(0);" class="banner-btn submit-application"> Оставить заявку <i class="bottom-icon-arrow velvet-bg"></i> </a>#}
                 </div>
                 <div class="stock-banner-bg-img-wrap">
                     <picture>
@@ -82,122 +82,25 @@
                 </div>
             </div>
         </div>
+
+
+
         <div class="container">
+        {% if  product.content_tr %}
+            <div class="stock-banner treb content-padding stock-banner-large_auto">
+                <p class="stock-banner-large-caption">Требования</p>
+                {% autoescape off %} {{ product.content_tr }} {% endautoescape %}
+            </div>
+        {% endif %}
             <div class="stock-banner content-padding stock-banner-large_auto">
-                {#<div>#}
                 {% autoescape off %} {{ product.content }} {% endautoescape %}
             </div>
         </div>
-    </section>
-    <!--
-    <div class="product-detail">
-        <h1>{{ product.name }}</h1>
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}
-{% static "img/no_image.png" %}{% endif %}">
-        <h1>{{ product.name }} 11 Detail</h1>
-        <h2><a href="{{ product.category.get_absolute_url }}">
-            {{ product.category }}</a></h2>
-        {#        <p class="price">${{ product.price }}</p>#}
 
-        <form action="{% url "cart:cart_add" product.id %}" method="post">
-            {{ cart_product_form }}
-            {% csrf_token %}
-            <input type="submit" value="Add to cart">
-        </form>
-        {{ product.content|linebreaks }}
-    </div>
 
-    -->
-    <!--
-        <section class="address">
-            <div class="container">
-                <div class="address-heading"><p class="address-title">Подберите подходящий курс обучения</p>
-                    <p class="address-choice">Выберите категорию прав, вид теории и коробку передач</p></div>
-                <form id="pokazat-tceny" class="address-form-mobile">
-                    <div class="price-form" style="flex-wrap: wrap;">
-                        <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="Категория A" id="68"></div>
-                        <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="Категория A1 Легкие мотоциклы" id="71"></div>
-                        <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="Категория A1 Квадроциклы" id="72"></div>
-                        <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="Категория M" id="70"></div>
-                        <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="Категория B" id="67" class="active-tab"></div>
-                        <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="B1 Квадроциклы" id="78"></div>
-                        <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="Категория BE" id="73"></div>
-                        <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="Категория С" id="69"></div>
-                        <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="Категория CE" id="74"></div>
-                        <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="Категория D" id="75"></div>
-                        <div class="price-col-small price-col-small-submit"><input type="submit" name="" value="Категория DE" id="76"></div>
-                    </div>
-                </form>
-                <form id="pokazat-tceny-mob" class="address-form-wrap">
-                    <div class="address-form">
-                        <div class="address-col-small filter-item filter-item filter-item_address"><input type="hidden" name="KATEGORIYA" value="131"><a class="filter-handler filter-handler_address"
-                                                                                                                                                         href="javascript:void(0);" data-id="">Категория B</a>
-                            <div class="filter-dd filter-dd_address" style="display: none;">
-                                <ul>
-                                    <li><a class="filter-category-mob" href="javascript:void(0);" id="68">Категория A</a></li>
-                                    <li><a class="filter-category-mob" href="javascript:void(0);" id="71">Категория A1 Легкие мотоциклы</a></li>
-                                    <li><a class="filter-category-mob" href="javascript:void(0);" id="72">Категория A1 Квадроциклы</a></li>
-                                    <li><a class="filter-category-mob" href="javascript:void(0);" id="70">Категория M</a></li>
-                                    <li><a class="filter-category-mob" href="javascript:void(0);" id="67">Категория B</a></li>
-                                    <li><a class="filter-category-mob" href="javascript:void(0);" id="78">B1 Квадроциклы</a></li>
-                                    <li><a class="filter-category-mob" href="javascript:void(0);" id="73">Категория BE</a></li>
-                                    <li><a class="filter-category-mob" href="javascript:void(0);" id="69">Категория С</a></li>
-                                    <li><a class="filter-category-mob" href="javascript:void(0);" id="74">Категория CE</a></li>
-                                    <li><a class="filter-category-mob" href="javascript:void(0);" id="75">Категория D</a></li>
-                                    <li><a class="filter-category-mob" href="javascript:void(0);" id="76">Категория DE</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <div class="filter_ajax">
-                    <div class="contacts-top-banners">
-                        <div class="pokazat-tceny">
-                            <div class="triple-banner"><p class="triple-banner-supTitle">"B1" Квадрициклы </p>
-                                <div class="triple-banner-body">
-                                    <div class="triple-banner-in-body"><span class="triple-banner-wallet triple-banner-wallet-clock">Вождение минимум <span class="triple-banner-wallet-color">11 часов</span>. Часы можно увеличить</span>
-                                    </div>
-                                </div>
-                                <div class="triple-banner-heading">
-                                    <div class=""><p class="triple-banner-subTitle">Коробка механика:</p>
-                                        <p class="triple-banner-title">24 000 <span class="triple-banner-title-sup">₽</span> <span class="triple-banner-title-gray triple-banner-title-gray-crossed"> 26 000 <span
-                                                class="triple-banner-title-gray-sup">₽</span> </span></p></div>
-                                    <a href="#save" class="banner-btn">Записаться <i class="bottom-icon-arrow velvet-bg"></i> </a></div>
-                                <div class="triple-banner-in-body triple-banner-in-body-bottom"><span class="triple-banner-wallet triple-banner-wallet-footer">Есть поэтапная оплата. Первоначальный взнос - <span
-                                        class="triple-banner-wallet-color triple-banner-wallet-color_bold">8 000 р.</span></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-    <!--
-    <section class="gift-certificate">
-        <div class="container">
-            <div class="gift-certificate-wrapper gift-certificate-wrapper_car">
-                <div class="gift-certificate-left"><p class="gift-certificate-title">Требования для прохождения обучения:</p>
-                    {% autoescape off %} {{ product.content_tr }} {% endautoescape %}
-
-                    <a href="#save" class="btn-link desktop" title="">Начать обучение <i class="bottom-icon-arrow velvet-bg"></i></a></div>
-                <div class="gift-certificate-img-bg-wrap"><img src="{% if product.image_tr %}{{ product.image_tr.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" alt="" class="gift-certificate-img-bg"></div>
-            </div>
-        </div>
-    </section>
-    <section class="large-cards">
-        <div class="container">
-            <div class="large-cards-wrapper">
-                <div class="large-card large-card_yellow large-card_test-drive"><p class="large-card-title">Тест-драйв бесплатно!</p>
-                    <p class="large-card-text">Оцените все преимущества нашей автошколы лично, тест-драйв с инструктором бесплатно!</p> <a href="/test-drive/" class="large-card-btn">Подробнее<i
-                            class="right-white-icon"></i></a></div>
-                <div class="large-card large-card_velvet large-card_best-price"><p class="large-card-title">Круглогодичная мотошкола!</p>
-                    <p class="large-card-text">Обучение круглый год на крытых площадках, тест-драйв бесплатно!</p> <a href="/motoshkola/" class="large-card-btn">Подробнее<i class="right-white-icon"></i></a></div>
-            </div>
-        </div>
     </section>
 
-    -->
-    <section class="schoolMoscow schoolHM">
+    <section class="schoolHM">
         <div class="container">
             <div class="section-heading"><p class="heading-title">Преимущества обучения</p></div>
             <div class="callManager-advantages-wrapper">
@@ -206,99 +109,9 @@
                 <div class="callManager-advantage-block callManager-advantage_3"><p>На практическое вождение Вас заберут от автошколы</p></div>
                 <div class="callManager-advantage-block callManager-advantage_8"><p>Оплата обучения в рассрочку</p></div>
 
-{#                <div class="callManager-advantage-block callManager-advantage_3-8"><p>Электронные учебники, тесты и тренажеры уже включены в стоимость</p></div>#}
-{#                <div class="callManager-advantage-block callManager-advantage_6"><p>Поддержка психолога в преодолении страха</p></div>#}
-{#                <div class="callManager-advantage-block callManager-advantage_5"><p>Ускоренный курс 1,5 месяца</p></div>#}
-{#                <div class="callManager-advantage-block callManager-advantage_4"><p>Скидка на онлайн обучение</p></div>#}
             </div>
         </div>
     </section>
-
-    <!--
-    <section class="feedback">
-        <div class="container">
-            <div class="feedback-swiper swiper-container-fade swiper-container-initialized swiper-container-horizontal">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide feedback-slide swiper-slide-visible swiper-slide-active" itemprop="review" itemscope="" itemtype="http://schema.org/Review"
-                         style="width: 588px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
-                        <div itemprop="itemReviewed" itemscope="" itemtype="https://schema.org/Organization">
-                            <meta itemprop="name" content="magic-drive.ru">
-                            <meta itemprop="address" content="г.Москва">
-                            <meta itemprop="telephone" content="+7(495)532-55-07">
-                        </div>
-                        <link itemprop="url" href="magic-drive.ru">
-                        <div class="feedback-user-avatar"><img src="/upload/ammina.optimizer/png/q95/bitrix/templates/avtoshkola/img/foto.png" alt="Борис"></div>
-                        <p class="feedback-caption">Отзывы</p>
-                        <p class="feedback-user-data" itemprop="author"> Борис <span class="light" itemprop="datePublished" content="2020-08-10"> 10.08.2020 </span></p>
-                        <div class="feedback-text"><p itemprop="reviewBody"></p>
-                            <p>Автошкола Топ, советую. Катался недалеко от алмаатинской, инструктор попался космос. Виталий если читаешь спасибо тебе! парень добрый, отзывчивый, объясняет толково, доходчиво даже чайнику
-                                как я все было понятно)) разбирали ошибки, искренне переживал за мои косяки, каких было немало)) в принципе весь персонал отзывчивый, все понравилось. экзамен сдал легко даже удивился.
-                                Спасибо стимул! </p></div>
-                    </div>
-                    <div class="swiper-slide feedback-slide swiper-slide-next" itemprop="review" itemscope="" itemtype="http://schema.org/Review"
-                         style="width: 588px; opacity: 0; transform: translate3d(-588px, 0px, 0px);">
-                        <div itemprop="itemReviewed" itemscope="" itemtype="https://schema.org/Organization">
-                            <meta itemprop="name" content="magic-drive.ru">
-                            <meta itemprop="address" content="г.Москва">
-                            <meta itemprop="telephone" content="+7(495)532-55-07">
-                        </div>
-                        <link itemprop="url" href="magic-drive.ru">
-                        <div class="feedback-user-avatar"><img src="/upload/ammina.optimizer/png/q95/bitrix/templates/avtoshkola/img/foto.png" alt="Маша Токарева"></div>
-                        <p class="feedback-caption">Отзывы</p>
-                        <p class="feedback-user-data" itemprop="author"> Маша Токарева <span class="light" itemprop="datePublished" content="2020-08-07"> 07.08.2020 </span></p>
-                        <div class="feedback-text"><p itemprop="reviewBody"></p>
-                            <p>Спасибо коллективу автошколы Стимул за качественную организацию, позитивное и доброжелательное отношение и индивидуальный подход к своим ученикам!! В наше время это дорогого стоит.
-                                Особенная благодарность инструкторам на Братеевской. Ребята вы настоящие профи!!</p></div>
-                    </div>
-                    <div class="swiper-slide feedback-slide" itemprop="review" itemscope="" itemtype="http://schema.org/Review" style="width: 588px; opacity: 0; transform: translate3d(-1176px, 0px, 0px);">
-                        <div itemprop="itemReviewed" itemscope="" itemtype="https://schema.org/Organization">
-                            <meta itemprop="name" content="magic-drive.ru">
-                            <meta itemprop="address" content="г.Москва">
-                            <meta itemprop="telephone" content="+7(495)532-55-07">
-                        </div>
-                        <link itemprop="url" href="magic-drive.ru">
-                        <div class="feedback-user-avatar"><img src="/upload/ammina.optimizer/png/q95/bitrix/templates/avtoshkola/img/foto.png" alt="Марина"></div>
-                        <p class="feedback-caption">Отзывы</p>
-                        <p class="feedback-user-data" itemprop="author"> Марина <span class="light" itemprop="datePublished" content="2020-08-03"> 03.08.2020 </span></p>
-                        <div class="feedback-text"><p itemprop="reviewBody"></p>
-                            <p>Зашла и теория и практика. научилась ездить на механике только благодаря Алексею на площадке на братеевской, теперь вовсю гоняю)) спасибо вам большое за наглядные примеры и такое
-                                внимательное отношение к работе!!</p></div>
-                    </div>
-                    <div class="swiper-slide feedback-slide" itemprop="review" itemscope="" itemtype="http://schema.org/Review" style="width: 588px; opacity: 0; transform: translate3d(-1764px, 0px, 0px);">
-                        <div itemprop="itemReviewed" itemscope="" itemtype="https://schema.org/Organization">
-                            <meta itemprop="name" content="magic-drive.ru">
-                            <meta itemprop="address" content="г.Москва">
-                            <meta itemprop="telephone" content="+7(495)532-55-07">
-                        </div>
-                        <link itemprop="url" href="magic-drive.ru">
-                        <div class="feedback-user-avatar"><img src="/upload/ammina.optimizer/png/q95/bitrix/templates/avtoshkola/img/foto.png" alt="Артур И."></div>
-                        <p class="feedback-caption">Отзывы</p>
-                        <p class="feedback-user-data" itemprop="author"> Артур И. <span class="light" itemprop="datePublished" content="2020-08-01"> 01.08.2020 </span></p>
-                        <div class="feedback-text"><p itemprop="reviewBody"></p>
-                            <p>Площадка нормальная, машины хорошие. Но инструкторы не понравились! Хоть смотрите кого на работу набираете.</p></div>
-                    </div>
-                    <div class="swiper-slide feedback-slide" itemprop="review" itemscope="" itemtype="http://schema.org/Review" style="width: 588px; opacity: 0; transform: translate3d(-2352px, 0px, 0px);">
-                        <div itemprop="itemReviewed" itemscope="" itemtype="https://schema.org/Organization">
-                            <meta itemprop="name" content="magic-drive.ru">
-                            <meta itemprop="address" content="г.Москва">
-                            <meta itemprop="telephone" content="+7(495)532-55-07">
-                        </div>
-                        <link itemprop="url" href="magic-drive.ru">
-                        <div class="feedback-user-avatar"><img src="/upload/ammina.optimizer/png/q95/bitrix/templates/avtoshkola/img/foto.png" alt="Константин"></div>
-                        <p class="feedback-caption">Отзывы</p>
-                        <p class="feedback-user-data" itemprop="author"> Константин <span class="light" itemprop="datePublished" content="2020-07-28"> 28.07.2020 </span></p>
-                        <div class="feedback-text"><p itemprop="reviewBody"></p>
-                            <p>Выбрал автошколу из за возможности учить теорию удаленно и не прогадал.удобная возможность не тратить время на дорогу. препадаватель Владимир все понятно объяснял, лучший препадаватель из
-                                всех кого я знаю. Инструктор тоже ни разу не повысил голос, относился терпиливо. Спасибо руководству за хорошо подобраный коллектив и новенькие права))</p></div>
-                    </div>
-                </div>
-                <div class="feedback-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
-                <div class="feedback-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
-                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-            <a href="/otzyvy/" class="centered-btn">Все отзывы<i class="bottom-icon-arrow velvet-bg"></i></a></div>
-    </section>
--->
-
 
 
 {% endblock %}

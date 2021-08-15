@@ -13,7 +13,7 @@
     <link href="{% static "css/base.css" %}" rel="stylesheet">
     <link href="/static/css/avtoschool.css" rel="stylesheet">
 {#    <link rel="stylesheet" href="/static/dist/css/bvi.min.css" type="text/css">#}
-{#    <link rel="stylesheet" href="{% static "/dist/css/bvi.min.css" %}" type="text/css">#}
+    <link rel="stylesheet" href="{% static "/dist/css/bvi.min.css" %}" type="text/css">
 
 {% include 'head.html' %}
 </head>
@@ -83,85 +83,7 @@
 </main>
 {#</div>#}
 {% include 'footer.html' %}
-<div id="zayavka-modal">
-    <form class="zayavka modal-wrap" onsubmit="ym(25082978, 'reachGoal', 'SEND_ZAY', {URL: document.location.href});  return true;">
-        <div class="modal-submit reset-form"><a href="javascript:void(0);" class="close-btn"></a>
-            <p class="submit-title">Оставить заявку</p>
-            <p class="submit-caption">Мы свяжемся с вами в течение 1 рабочего дня</p> <input type="text" name="NAME" value="" placeholder="Имя" required><input class="phone-mask" type="tel" name="PHONE" value=""
-                                                                                                                                                                placeholder="Телефон" required><input type="email"
-                                                                                                                                                                                                      name="EMAIL" value=""
-                                                                                                                                                                                                      placeholder="E-mail"
-                                                                                                                                                                                                      required><input
-                    type="text" name="COMMENTS" value="" placeholder="Комментарий">
-            <button class="btn-submit" type="submit">Отправить <i class="right-velvet-icon"></i></button>
-        </div>
-    </form>
-</div>
-<form id="form_zadat-vopros" onsubmit="ym(25082978, 'reachGoal', 'SEND_ZAY', {URL: document.location.href});  return true;">
-    <div class="modal-vopros reset-form"><a href="javascript:void(0);" class="close-btn"></a>
-        <p class="submit-title">Задать вопрос</p>
-        <p class="submit-caption">Мы свяжемся с вами в течение 1 рабочего дня</p> <input type="text" name="NAME" value="" placeholder="Имя" required><input class="phone-mask" type="tel" name="PHONE" value=""
-                                                                                                                                                            placeholder="Телефон" required><input type="email" name="EMAIL"
-                                                                                                                                                                                                  value=""
-                                                                                                                                                                                                  placeholder="E-mail"
-                                                                                                                                                                                                  required><input
-                type="text" name="COMMENTS" value="" placeholder="Вопрос" required>
-        <button class="btn-submit" type="submit">Отправить <i class="right-velvet-icon"></i></button>
-    </div>
-</form>
-<form id="form_obratnyj-zvonok" onsubmit="ym(25082978, 'reachGoal', 'SEND_ZAY', {URL: document.location.href});  return true;">
-    <div class="modal-callback reset-form"><a href="javascript:void(0);" class="close-btn"></a>
-        <p class="submit-title submit-title--callback">Заказать звонок</p>
-        <p class="submit-caption">Оставьте свой номер, и мы с вами свяжемся</p> <input class="phone-mask" type="tel" name="PHONE" value="" placeholder="+ 7 (      )  ___-__-__" required>
-        <button class="btn-submit" type="submit">Заказать <i class="right-velvet-icon"></i></button>
-    </div>
-</form>
-<div class="message">
-    <div class="message-img-wrap"><img class="message-img" src="/static/upload/png/q95/bitrix/templates/avtoshkola/img/yellow-check.png" alt="Ваше сообщение отправлено"></div>
-    <p class="submit-title">Спасибо за заявку</p>
-    <p class="submit-caption">Ваша заявка успешно отправлена! Мы свяжемся с вами в течение 1 рабочего дня</p>
-</div>
-<div class="message-comment">
-    <div class="message-img-wrap"><img class="message-img" src="/static/upload/png/q95/bitrix/templates/avtoshkola/img/yellow-check.png" alt="Ваше сообщение отправлено"></div>
-    <p class="submit-title">Спасибо за комментарий!</p>
-    <p class="submit-caption">Ваш комментарий отправлен</p>
-</div>
-<form id="form_drugoj-filial">
-    <div class="modal modal-car modal-other-f">
-        <noscript></noscript>
-        <a href="javascript:void(0);" class="close-btn"></a>
-        <p class="submit-title submit-title--without-icon">Выберите удобный филиал</p>
-        <div class="address-col-small address-col-small-search"><input type="hidden" name="METRO" value=""><input name="" value="" placeholder="Поиск станции.." list="metro-okrug-search" id="metro-okrug-value">
-            <datalist id="metro-okrug-search">
-                <option data-id="/avtoshkoly/avtoshkola-na-aviamotornoy" value="Авиамоторная"></option>
 
-            </datalist>
-        </div>
-        <ul class="modal-other-filial__list">
-            <li class="modal-other-filial__item"><a href="avtoshkoly/avtoshkola-bibliotekaimenilenina/index.html" class="modal-other-filial__link branch-context-station"> <i class="metro-icon-shadow-large"> <img
-                    src="/static/upload/svg/bitrix/templates/avtoshkola/img/linii-metro/liniya-1.svg"></i> Библиотека имени Ленина </a></li>
-
-        </ul>
-    </div>
-</form>
-<form id="form_drugoj-filial-moto">
-    <div class="modal modal-moto modal-other-f">
-        <noscript></noscript>
-        <a href="javascript:void(0);" class="close-btn"></a>
-        <p class="submit-title submit-title--without-icon">Выберите удобный филиал</p>
-        <div class="address-col-small address-col-small-search"><input type="hidden" name="METRO" value=""><input name="" value="" placeholder="Поиск станции.." list="metro-moto-okrug-search" id="metro-moto-okrug-value">
-            <datalist id="metro-moto-okrug-search">
-                <option data-id="/motoshkola/motoshkola-alma-atinskaja" value="Алма-Атинская"></option>
-
-            </datalist>
-        </div>
-        <ul class="modal-other-filial__list">
-            <li class="modal-other-filial__item"><a href="motoshkola/motoshkola-alma-atinskaja/index.html" class="modal-other-filial__link branch-context-station"> <i class="metro-icon-shadow-large"> <img
-                    src="/static/upload/svg/bitrix/templates/avtoshkola/img/linii-metro/liniya-2.svg"></i> Алма-Атинская </a></li>
-
-        </ul>
-    </div>
-</form>
 
 <!--
 <div class="offer-slide"><a class="offer-close-btn" href="javascript:void(0);"></a>

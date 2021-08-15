@@ -8,7 +8,7 @@ div.news-detail img.detail_picture {
     margin: 0 8px 6px 1px;
 }
 
-.news-date-time {
+.news-time {
     color: #486daa;
 }
 
@@ -53,7 +53,6 @@ blockquote, q {
 
 blockquote:before, blockquote:after, q:before, q:after {
     content: "";
-    content: none;
 }
 
 a {
@@ -130,7 +129,6 @@ select, input, textarea {
 
 table {
     font-size: inherit;
-    font: 100%;
 }
 
 small {
@@ -208,7 +206,6 @@ body {
     background-color: #fff;
     line-height: 1.2;
     text-rendering: optimizeLegibility;
-    text-decoration-skip: objects;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
@@ -590,7 +587,6 @@ svg {
     font-family: swiper-icons;
     font-size: var(--swiper-navigation-size);
     text-transform: none !important;
-    text-transform: none;
     letter-spacing: 0;
     font-variant: initial;
 }
@@ -951,7 +947,7 @@ button.swiper-pagination-bullet {
 .swiper-container-cube .swiper-cube-shadow {
     position: absolute;
     left: 0;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background: #000;
@@ -3270,11 +3266,6 @@ body.compensate-for-scrollbar {
     z-index: 99996;
 }
 
-@supports (padding:max(0px)) {
-    .fancybox-caption {
-        padding: 75px max(44px, env(safe-area-inset-right)) max(25px, env(safe-area-inset-bottom)) max(44px, env(safe-area-inset-left));
-    }
-}
 
 .fancybox-caption--separate {
     margin-top: -50px;
@@ -3434,12 +3425,7 @@ body.compensate-for-scrollbar {
         padding-right: 12px;
     }
 
-    @supports (padding:max(0px)) {
-        .fancybox-caption {
-            padding-left: max(12px, env(safe-area-inset-left));
-            padding-right: max(12px, env(safe-area-inset-right));
-        }
-    }
+
 }
 
 .fancybox-share {
@@ -6834,16 +6820,6 @@ body.compensate-for-scrollbar {
     animation-duration: 3s;
 }
 
-@media (print), (prefers-reduced-motion: reduce) {
-    .animated {
-        -webkit-animation-duration: 1ms !important;
-        animation-duration: 1ms !important;
-        -webkit-transition-duration: 1ms !important;
-        transition-duration: 1ms !important;
-        -webkit-animation-iteration-count: 1 !important;
-        animation-iteration-count: 1 !important;
-    }
-}
 
 /* Ammina CSS file original /bitrix/templates/avtoshkola/css/style.css */
 html {
@@ -6999,10 +6975,12 @@ footer {
     background-color: #fff;
     z-index: 0;
 }
+
 section.breadcrumbstop {
     padding-top: 3rem;
     padding-bottom: 0rem;
 }
+
 section {
     padding-top: 0rem;
     padding-bottom: 12rem;
@@ -7012,7 +6990,7 @@ section {
     padding-bottom: 0;
 }
 
-.schoolMoscow, .comments, .article-news-blocks {
+.schoolHM, .comments, .article-news-blocks {
     padding-top: 0;
 }
 
@@ -7176,7 +7154,6 @@ section {
     right: 1.4rem;
     top: 50%;
     transform: translateY(-50%);
-    background-image: url("/static/upload/img/Vector-right.png");
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: contain;
@@ -8159,47 +8136,47 @@ a:hover .right-white-icon:after {
 }
 
 .best-price-block_a {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-1.png");
+    background-image: url("/static/img/best-price-1.png");
     height: 35.8rem;
 }
 
 .best-price-block_a1 {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-2.png");
+    background-image: url("/static/img/best-price-2.png");
     height: 38.3rem;
 }
 
 .best-price-block_b {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-3.png");
+    background-image: url("/static/img/best-price-3.png");
     height: 35.8rem;
 }
 
 .best-price-block_b1 {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-4.png");
+    background-image: url("/static/img/best-price-4.png");
     height: 38.5rem;
 }
 
 .best-price-block_be {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-5.png");
+    background-image: url("/static/img/best-price-5.png");
     height: 36.5rem;
 }
 
 .best-price-block_c {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-6.png");
+    background-image: url("/static/img/best-price-6.png");
     height: 36.9rem;
 }
 
 .best-price-block_c1 {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-7.png");
+    background-image: url("/static/img/best-price-7.png");
     height: 35.8rem;
 }
 
 .best-price-block_d {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-8.png");
+    background-image: url("/static/img/best-price-8.png");
     height: 35.3rem;
 }
 
 .best-price-block_d1 {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-9.png");
+    background-image: url("/static/img/best-price-9.png");
     height: 36.9rem;
 }
 
@@ -8294,12 +8271,12 @@ a:hover .right-white-icon:after {
 }
 
 .large-card_test-drive:after {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/large-card-1.png");
+    background-image: url("/static/img/large-card-1.png");
     background-position: center 0;
 }
 
 .large-card_year-round:after {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/large-card-2.png");
+    background-image: url("/static/img/large-card-2.png");
 }
 
 .school-at-home-wrapper {
@@ -8319,7 +8296,7 @@ a:hover .right-white-icon:after {
     display: block;
     flex-basis: 59%;
     max-width: 59%;
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/school-at-home.png");
+    background-image: url("/static/img/school-at-home.png");
     height: 95.4rem;
     background-repeat: no-repeat;
     background-size: contain;
@@ -8332,13 +8309,13 @@ a:hover .right-white-icon:after {
     margin-bottom: 5rem;
 }
 
-.school-at-home-list li {
+.school-at-home-list li, .treb li {
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 2rem;
 }
 
-.school-at-home-list li:before {
+.school-at-home-list li:before, .treb li:before {
     content: "";
     display: inline-block;
     width: 3rem;
@@ -9061,16 +9038,16 @@ p .light {
 }
 
 .large-card_3:after {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/large-card-3.png");
+    background-image: url("/static/img/large-card-3.png");
 }
 
 .large-card_4:after {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/large-card-4.png");
+    background-image: url("/static/img/large-card-4.png");
     background-position: center 0;
 }
 
 .large-card_5:after {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/large-card-4.png");
+    background-image: url("/static/img/large-card-4.png");
     background-position: center 0;
 }
 
@@ -9141,7 +9118,7 @@ p .light {
 }
 
 .stock-banner-large_1:after {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/stock-top-banner.png");
+    background-image: url("/static/img/stock-top-banner.png");
     height: 35.8rem;
 }
 
@@ -9165,7 +9142,7 @@ p .light {
 }
 
 .stock-banner-large-title {
-    font-size: 4rem;
+    font-size: 3.3rem;
     font-weight: 700;
     margin-bottom: 4rem;
     position: relative;
@@ -9245,7 +9222,7 @@ p .light {
 }
 
 .our-vacancies-wrapper_a4:before {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/A4Curled.png");
+    background-image: url("/static/img/A4Curled.png");
     height: 62.1rem;
 }
 
@@ -9323,7 +9300,7 @@ p .light {
 }
 
 .our-vacancies_car:before {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/vacancies-car.png");
+    background-image: url("/static/img/vacancies-car.png");
     width: 21.8rem;
     height: 12.1rem;
     left: -6rem;
@@ -9331,7 +9308,7 @@ p .light {
 }
 
 .our-vacancies_moto:before {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/vacancies-motorcycle.png");
+    background-image: url("/static/img/vacancies-motorcycle.png");
     width: 14.8rem;
     height: 11.9rem;
     left: -1.5rem;
@@ -9430,7 +9407,7 @@ p .light {
 
 .questions-banner-wrapper:before {
     content: "";
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/questions-banner.png");
+    background-image: url("/static/img/questions-banner.png");
     height: 51.3rem;
     flex-basis: 50%;
     max-width: 50%;
@@ -9525,7 +9502,7 @@ p .light {
 }
 
 .callManager-banner {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/callManager-banner.png");
+    background-image: url("/static/img/callManager-banner.png");
     height: 60.2rem;
     background-repeat: no-repeat;
     background-position: center;
@@ -9682,12 +9659,12 @@ a:hover > .bottom-yellow-icon:after {
 }
 
 .docs-wrapper_folder:before {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/docs-banner.png");
+    background-image: url("/static/img/docs.png");
     height: 65rem;
 }
 
 .docs_dark:before {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/docs-dark.png");
+    background-image: url("/static/img/docs-dark.png");
     width: 10.9rem;
     height: 15.6rem;
     left: 50%;
@@ -9696,7 +9673,7 @@ a:hover > .bottom-yellow-icon:after {
 }
 
 .docs_light:before {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/docs-light.png");
+    background-image: url("/static/img/docs-light.png");
     width: 10.6rem;
     height: 13.1rem;
     left: 50%;
@@ -9871,7 +9848,7 @@ a:hover > .bottom-yellow-icon:after {
 }
 
 .large-card_best-price:after {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/large-card-6.png");
+    background-image: url("/static/img/large-card-6.png");
 }
 
 .calculator-item__range {
@@ -10342,7 +10319,7 @@ input[type="radio"]:checked + .calculator-select-btn {
     content: "";
     flex-basis: 55%;
     max-width: 55%;
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/contacts-mokap.png");
+    background-image: url("/static/img/contacts-mokap.png");
     height: 82.1rem;
     background-size: contain;
     background-repeat: no-repeat;
@@ -10621,6 +10598,7 @@ button:hover > .bottom-icon-arrow:after {
     flex-basis: 46%;
     max-width: 46%;
 }
+
 .gift-certificate-left li {
     font-size: 2rem;
     font-weight: 500;
@@ -10673,7 +10651,7 @@ button:hover > .bottom-icon-arrow:after {
 
 .stock-banner-large_moto {
     height: 48rem;
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/moto-top-banner.png");
+    background-image: url("/static/img/moto-top-banner.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -10695,7 +10673,7 @@ button:hover > .bottom-icon-arrow:after {
 }
 
 .block-banner-addvantage_moto:after {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/moto-banner-bg.png");
+    background-image: url("/static/img/moto-banner-bg.png");
     height: 53.1rem;
 }
 
@@ -10716,7 +10694,6 @@ button:hover > .bottom-icon-arrow:after {
     margin-bottom: 2.7rem;
     position: relative;
     position: relative;
-    padding-left: 4.5rem;
     padding-left: 4.5rem;
 }
 
@@ -10780,37 +10757,112 @@ button:hover > .bottom-icon-arrow:after {
     padding-top: 0;
 }
 
-.delivery-banner {
+.dostavka-banner {
     padding-top: 8rem;
     padding-bottom: 8rem;
     padding-left: 6rem;
     border-radius: 2.6rem;
     overflow: hidden;
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/delivery-bg.png");
+    background-image: url("/static/img/delivery-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-.delivery-banner-context {
+.dostavka-banner-context {
     width: 50%;
 }
 
-.delivery-banner-supTitle {
+.dostavka-banner-supTitle {
     font-size: 2rem;
     font-weight: 500;
     color: #747474;
     margin-bottom: 4.4rem;
 }
 
-.delivery-banner-title {
+.dostavka-banner-title {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 4rem;
 }
 
-.delivery-banner-text {
+.dostavka-banner-text {
     font-size: 1.8rem;
+}
+
+.lesson-blocks {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lesson-blocks {
+    flex-basis: 30%;
+    max-width: 30%;
+    margin-right: 2%;
+    margin-bottom: 7rem;
+    background-color: #fff;
+    border-radius: 2.6rem;
+    box-shadow: 0 1.7rem 6.5rem 0 rgba(23, 23, 23, .07);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.lesson-block-item {
+    background: #fae324;
+}
+
+.lesson-block:nth-child(even) {
+    margin-right: 0;
+}
+
+.lesson-block-body {
+    padding: 5rem 4.5rem 6rem;
+}
+
+.lesson-block-date {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.lesson-block-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    background-color: #04b700;
+    color: #fff;
+    margin: 5px 0;
+    padding: 5px 0 5px 0;
+    border-radius: 3rem;
+}
+
+.lesson-block-text {
+    font-size: 2rem;
+}
+
+.lesson-block-item img {
+    border-radius: 1rem;
+}
+
+.lesson-block-img {
+    height: 31rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.lesson-block-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.lesson-tools {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: 4.5rem 0;
 }
 
 .news-blocks {
@@ -10977,14 +11029,14 @@ button:hover > .bottom-icon-arrow:after {
 
 .stock-banner-large_news {
     height: 48rem;
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/news-top-banner-bg.png");
+    background-image: url("/static/img/news-banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .stock-banner-large_article {
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/articles-top-banner-bg.png");
+    background-image: url("/static/img/articles-top-banner-bg.png");
 }
 
 .banner-large-context {
@@ -10996,18 +11048,28 @@ button:hover > .bottom-icon-arrow:after {
     font-size: 1.8rem;
 }
 
-.news-block-item {
+.lesson-block-item h3 {
+    text-align: center;
+    /* font-size: 1rem; */
+    display: grid;
+}
+
+.lesson-block-item a {
+    margin: 0;
+}
+
+.lesson-block-item {
     flex-basis: 32.5%;
     max-width: 32.5%;
     margin-right: 1.25%;
     margin-bottom: 4.5rem;
     border-radius: 2.6rem;
     background-color: #fff;
-    padding: 5rem 3.5rem 6rem 4.5rem;
+    padding: 0 0 6rem 0;
     box-shadow: 0 1.7rem 6.5rem 0 rgba(23, 23, 23, .07);
 }
 
-.news-block-item:nth-child(3n) {
+.lesson-block-item:nth-child(3n) {
     margin-right: 0;
 }
 
@@ -11637,13 +11699,10 @@ a:hover .play-btn-icon {
 
 .metro-icon-shadow-large {
     display: inline-block;
-    display: inline-flex;
     vertical-align: bottom;
-    vertical-align: middle;
     width: 3.2rem;
     height: 3.2rem;
     position: relative;
-    flex-shrink: 0;
     flex-shrink: 0;
     border-radius: 50%;
     margin-right: 1.2rem;
@@ -11772,7 +11831,7 @@ a:hover .play-btn-icon {
 }
 
 .stock-banner-large_auto {
-    height: 48rem;
+    /*height: 48rem;*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -11817,7 +11876,7 @@ a:hover .play-btn-icon {
 .gift-certificate-wrapper_car {
 }
 
-.schoolMoscow .section-heading {
+.schoolHM .section-heading {
     width: 103rem;
 }
 
@@ -12112,7 +12171,7 @@ a:hover .play-btn-icon {
 
 .triple-banner_driving-lessons {
     min-height: 41rem;
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/stock-top-banner-3.png");
+    background-image: url("/static/img/stock-top-banner-3.png");
     background-repeat: no-repeat;
     background-position: 40% 50%;
     background-size: 70.8rem 34.7rem;
@@ -12577,7 +12636,7 @@ a:hover .play-btn-icon {
         height: 3.8rem;
     }
 
-    .schoolMoscow, .best-price, .about-graph, .helpful, .helpful-slider, .feedback, .stock, .reviews, .branches, .accelerated-banner, .about-top, .auto, .school-at-home, .address, .price, .webinar-banner, .gift-certificate, .schoolMoscow, .comments, .form-vacancies, .our-contacts, .our-vacancies, .article-news-blocks, .question, .delivery, .seo {
+    .schoolHM, .best-price, .about-graph, .helpful, .helpful-slider, .feedback, .stock, .reviews, .branches, .accelerated-banner, .about-top, .auto, .school-at-home, .address, .price, .webinar-banner, .gift-certificate, .schoolHM, .comments, .form-vacancies, .our-contacts, .our-vacancies, .article-news-blocks, .question, .delivery, .seo {
         padding: 12rem 0;
     }
 
@@ -12698,7 +12757,7 @@ a:hover .play-btn-icon {
         background-position: center;
         background-size: contain;
         border-radius: 50%;
-        box-shadow: 0px 20px 32px 0px rgba(221, 196, 196, .21);
+        box-shadow: 0 20px 32px 0 rgba(221, 196, 196, .21);
     }
 
     .mobile-call-item-icon_phone {
@@ -13005,7 +13064,6 @@ a:hover .play-btn-icon {
     .show-map-btn {
         background-color: transparent;
         font-size: 2rem;
-        font-size: 2.7rem;
         margin-right: 0;
         width: 100%;
         padding: 1.5rem 5rem;
@@ -13238,17 +13296,17 @@ a:hover .play-btn-icon {
     }
 
     .best-price-block_a {
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-1-mob.png");
+        background-image: url("/static/img/best-price-1-mob.png");
         height: 52.8rem;
     }
 
     .best-price-block_a1 {
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-2-mob.png");
+        background-image: url("/static/img/best-price-2-mob.png");
         height: 52.8rem;
     }
 
     .best-price-block_b {
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/best-price-3-mob.png");
+        background-image: url("/static/img/best-price-3-mob.png");
         height: 52.8rem;
     }
 
@@ -13352,7 +13410,7 @@ a:hover .play-btn-icon {
         margin-left: -6%;
         margin-right: -5%;
         height: 95.4rem;
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/school-at-home-mob.png");
+        background-image: url("/static/img/school-at-home-mob.png");
         background-position: left center;
     }
 
@@ -13390,7 +13448,7 @@ a:hover .play-btn-icon {
     }
 
     .banner-block {
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/banner-gray-mobile.png");
+        background-image: url("/static/img/banner-gray-mobile.jpg");
         min-height: 83rem;
         width: 100%;
         flex-direction: column;
@@ -13513,14 +13571,14 @@ a:hover .play-btn-icon {
     }
 
     .feedback-button-next {
-        right: 0rem;
+        right: 0;
         top: auto;
         bottom: -20.5rem;
         transform: initial;
     }
 
     .feedback-button-prev {
-        left: 0rem;
+        left: 0;
         top: auto;
         bottom: -20.5rem;
         transform: initial;
@@ -13638,12 +13696,24 @@ a:hover .play-btn-icon {
     .stock-banner-large {
         flex-wrap: wrap;
         padding: 7.5rem 3.5rem;
+        display: block;
     }
-
+    .stock-banner-bg-img-wrap {
+        flex-basis: 100%;
+    max-width: 100%;
+    margin-bottom: 3rem;
+    background: #ffffffc7;
+    border-radius: 2em;
+    position: inherit;
+    display: block;
+    height: 20em;
+    }
     .stock-banner-large-context {
         flex-basis: 100%;
         max-width: 100%;
         margin-bottom: 3rem;
+        background: #ffffffc7;
+        border-radius: 2em;
     }
 
     .stock-banner-large:after {
@@ -13673,7 +13743,6 @@ a:hover .play-btn-icon {
 
     .stock-banner-large-title {
         font-size: 4.8rem;
-        font-size: 6rem;
     }
 
     .stock-banner-large-title:before {
@@ -13924,7 +13993,7 @@ a:hover .play-btn-icon {
     }
 
     .callManager-banner {
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/callManager-banner.png");
+        background-image: url("/static/img/callManager-banner.png");
         height: 61rem;
         padding-top: 11rem;
     }
@@ -13983,7 +14052,7 @@ a:hover .play-btn-icon {
     .callManager-advantage-block:before {
         width: 15.6rem;
         height: 15.6rem;
-        margin-bottom: 0rem;
+        margin-bottom: 0;
         margin-right: 6.7rem;
         flex-shrink: 0;
         background-size: 55%;
@@ -14101,30 +14170,30 @@ a:hover .play-btn-icon {
         margin-bottom: 2rem;
     }
 
-    .delivery-banner {
+    .dostavka-banner {
         padding-top: 50rem;
         padding-bottom: 6.5rem;
         padding-left: 3.5rem;
         padding-right: 3.5rem;
         border-radius: 2.6rem;
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/delivery-bg-mobile.png");
+        background-image: url("/static/img/delivery-bg-mobile.png");
     }
 
-    .delivery-banner-context {
+    .dostavka-banner-context {
         width: 100%;
     }
 
-    .delivery-banner-supTitle {
+    .dostavka-banner-supTitle {
         font-size: 2.7rem;
         margin-bottom: 3.5rem;
     }
 
-    .delivery-banner-title {
+    .dostavka-banner-title {
         font-size: 4.8rem;
         margin-bottom: 3rem;
     }
 
-    .delivery-banner-text {
+    .dostavka-banner-text {
         font-size: 3rem;
     }
 
@@ -14448,7 +14517,7 @@ a:hover .play-btn-icon {
         flex-basis: 100%;
         max-width: 100%;
         width: 100%;
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/contacts-mokap.png");
+        background-image: url("/static/img/contacts-mokap.png");
         height: 70.5rem;
         min-height: 70.5rem;
         background-position: 100% 50%;
@@ -14574,7 +14643,7 @@ a:hover .play-btn-icon {
 
     .stock-banner-large_moto {
         height: 101.2rem;
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/moto-top-banner-mobile.png");
+        background-image: url("/static/img/moto-top-banner-mobile.png");
         align-items: flex-start;
     }
 
@@ -14702,13 +14771,13 @@ a:hover .play-btn-icon {
 
     .stock-banner-large_news {
         height: 92.8rem;
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/news-top-banner-bg-mobile.png");
+        background-image: url("/static/img/news-top-banner-bg-mobile.png");
         padding: 5.5rem 3.6rem;
         align-items: flex-start;
     }
 
     .stock-banner-large_article {
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/articles-top-banner-bg-mobile.png");
+        background-image: url("/static/img/articles-top-banner-bg-mobile.png");
     }
 
     .banner-large-context {
@@ -14716,7 +14785,7 @@ a:hover .play-btn-icon {
         max-width: 100%;
     }
 
-    .news-block-item {
+    .lesson-block-item {
         flex-basis: 100%;
         max-width: 100%;
         margin-right: 0;
@@ -15133,10 +15202,10 @@ a:hover .play-btn-icon {
     }
 
     .stock-banner-large_auto {
-        min-height: 105rem;
+        /*min-height: 105rem;*/
         align-items: flex-start;
-        padding-top: 6.5rem;
-        padding-bottom: 45rem;
+        padding-top: 0;
+        /*padding-bottom: 45rem;*/
         height: initial;
         background-size: contain;
         background-position: bottom;
@@ -15232,7 +15301,7 @@ a:hover .play-btn-icon {
 
     .triple-banner_driving-lessons {
         min-height: 41rem;
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/stock-top-banner-3.png");
+        background-image: url("/static/img/stock-top-banner-3.png");
         background-position: 50% 100%;
         background-size: contain;
         padding-bottom: 44rem;
@@ -15345,7 +15414,6 @@ a:hover .play-btn-icon {
 
 .social-panel-views-count {
     margin-right: 7.7rem;
-    margin-right: 5rem;
 }
 
 .social-panel-views-count-number {
@@ -15533,12 +15601,12 @@ a:hover .play-btn-icon {
 
 .banner-inside .banner-block {
     background-size: contain;
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/banner-gray-l.png");
+    background-image: url("/static/img/banner-gray-l.png");
 }
 
 .banner-second .banner-block {
     height: 40.2rem;
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/banner-gray-2.png");
+    background-image: url("/static/img/banner-gray-2.png");
 }
 
 .banner-second .banner-context {
@@ -15552,7 +15620,7 @@ a:hover .play-btn-icon {
 
 .banner-third .banner-block {
     height: 40.2rem;
-    background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/banner-gray-3.png");
+    background-image: url("/static/img/banner-gray-3.png");
 }
 
 .banner-third .banner-context {
@@ -15714,7 +15782,7 @@ a:hover .play-btn-icon {
     justify-content: space-between;
 }
 
-.article-news-blocks .news-block-item {
+.article-news-blocks .lesson-block-item {
     flex-basis: 47.5%;
     max-width: 47.5%;
     margin-right: 0;
@@ -15888,7 +15956,7 @@ a:hover .play-btn-icon {
 
     .banner-inside .banner-block {
         background-size: cover;
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/banner-gray-mobile.png");
+        background-image: url("/static/img/banner-gray-mobile.jpg");
     }
 
     .banner-second, .banner-third {
@@ -15899,7 +15967,7 @@ a:hover .play-btn-icon {
         padding-top: 47.5rem;
         padding-bottom: 6.4rem;
         height: auto;
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/banner-gray-2-mobile.png");
+        background-image: url("/static/img/banner-gray-2-mobile.png");
         background-position: center 0;
     }
 
@@ -15914,7 +15982,7 @@ a:hover .play-btn-icon {
 
     .banner-third .banner-block {
         height: auto;
-        background-image: url("/static/upload/png/q95/bitrix/templates/avtoshkola/img/banner-gray-3-mobile.png");
+        background-image: url("/static/img/banner-gray-3-mobile.png");
         background-position: center 0;
     }
 
@@ -16019,7 +16087,7 @@ a:hover .play-btn-icon {
         flex-wrap: nowrap;
     }
 
-    .article-news-blocks .news-block-item {
+    .article-news-blocks .lesson-block-item {
         flex-shrink: 0;
         flex-basis: initial;
         max-width: none;
@@ -16163,7 +16231,7 @@ a:hover .play-btn-icon {
 }
 
 .aside-text {
-    max-width: 0%;
+    max-width: 0;
     margin-left: .5rem;
     overflow: hidden;
     white-space: nowrap;
@@ -16384,20 +16452,6 @@ a:hover .play-btn-icon {
     font-size: 2rem;
 }
 
-#zayavka-modal {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: auto;
-    z-index: 100;
-}
-
-#zayavka-modal.active {
-    display: block;
-}
 
 .modal-wrap {
     background-color: #f5f5f5;
@@ -16920,10 +16974,9 @@ a.disabled {
         margin-bottom: 3rem;
     }
 
-    .desk {
-        display: none;
-    }
-
+    /*.desk {*/
+    /*    display: none;*/
+    /*}*/
     .mob {
         display: flex;
     }
@@ -17044,7 +17097,7 @@ div.news-list img.preview_picture {
     margin: 0 4px 6px 0;
 }
 
-.news-date-time {
+.news-time {
     color: #486daa;
 }
 
@@ -17058,7 +17111,7 @@ div.news-list img.preview_picture {
     margin: 0 4px 6px 0;
 }
 
-.news-date-time {
+.news-time {
     color: #486daa;
 }
 
@@ -17072,7 +17125,7 @@ div.news-list img.preview_picture {
     margin: 0 4px 6px 0;
 }
 
-.news-date-time {
+.news-time {
     color: #486daa;
 }
 
@@ -17086,7 +17139,7 @@ div.news-list img.preview_picture {
     margin: 0 4px 6px 0;
 }
 
-.news-date-time {
+.news-time {
     color: #486daa;
 }
 
@@ -17264,7 +17317,7 @@ div.news-list img.preview_picture {
 /* Localized */
 
 
-.section-heading h1{
+.section-heading h1 {
     font-size: 4.8rem;
     font-weight: 700;
     margin-bottom: 3rem;

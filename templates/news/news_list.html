@@ -36,10 +36,10 @@
             <div class="news-blocks">
 {% for n in news %}
 
-                <div class="news-block-item"><p class="news-block-date">{{ n.created }}</p>
+                <div class="lesson-block-item"><p class="news-block-date">{{ n.created }}</p>
                     <p class="news-block-title">{{ n.name }}</p>
                     <div class="news-text">{{ n.content }}</div>
-                    <a href="{{ n.slug }}" class="news-link" title="">Читать далее<i class="bottom-icon-arrow gray-bg"></i></a></div>
+                    <a href="{{ n.slug }}/" class="news-link" title="">Читать далее<i class="bottom-icon-arrow gray-bg"></i></a></div>
 
 {% endfor %}
             </div>

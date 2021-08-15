@@ -344,16 +344,16 @@ form div.field {
 
 .stock-banner-large-summ {
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 3.3rem;
     color: #b12323;
 }
 
-.stock-banner-large-title-small {
-    margin-bottom: .5rem;
-    font-weight: 400;
-    font-size: 1.4rem;
-    color: #949494;
-}
+/*.stock-banner-large-title-small {*/
+/*    margin-bottom: .5rem;*/
+/*    font-weight: 400;*/
+/*    font-size: 1.4rem;*/
+/*    color: #949494;*/
+/*}*/
 
 .stock-banner-large-coin {
     display: flex;

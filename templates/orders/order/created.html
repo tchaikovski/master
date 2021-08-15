@@ -3,14 +3,17 @@
     Thank you
 {% endblock %}
 {% block content %}
-    <h1>Thank you</h1>
-    <p>Your order has been successfully completed. Your order number is
-        <strong>{{ order.id }}</strong>.</p>
-    <p>
-    <p>order:{{ order.first_name }}</p>
-    <p>order:{{ order.last_name }}</p>
-    <p>order:{{ order.phone }}</p>
-    <p>quantity:{{ quantity }}</p>
-    <p>product: {{ product }}</p>
-    <p>price: {{ price }}</p>
+    <section class="best-price" id="aside1">
+        <div class="container">
+            <div class="section-heading"><p class="heading-title">Лучшие цены</p>
+                <p class="heading-caption">Ваша завка оформлена под номером <strong>{{ order.id }}</strong> </p>
+                <p class="heading-caption">Имя:{{ order.first_name }}</p>
+                <p class="heading-caption">Фамилия:{{ order.last_name }}</p>
+                <p class="heading-caption">Телефон:{{ order.phone }}</p>
+                <p class="heading-caption">Курс : {{ product }}</p>
+                <p class="heading-caption">Цена: {{ price }}</p>
+                <a href="/" class="heading-btn">На главную <i class="bottom-icon-arrow velvet-bg"></i></a>
+            </div></div>
+    </section>
+
 {% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block description %}{{ product.description }}{% endblock %}
+{% block title %}{{ product.title }}{% endblock %}
+
+{% block content %}
+    <section class="docs">
+        <div class="container">
+
+            <div class="our-vacancies-wrapper docs-wrapper_folder">
+                <div class="our-vacancies-context"><p class="our-vacancies-caption">Документы</p>
+                    <h1 class="our-vacancies-title">{{ product.name }}</h1>
+                    <p class="our-vacancies-text">{{ product.description }}</p>
+
+                </div>
+            </div></div>
+    </section>
+    <section class="docs-list">
+        <div class="container">
+            {% autoescape off %} {{ product.code }} {% endautoescape %}
+
+
+
+        </div>
+    </section>
+
+
+    <section class="about-top">
+        <div class="container container-singlepage">
+
+            <div class="about-top-banner">
+
+                <div class="about-top-text">   </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+{% endblock %}

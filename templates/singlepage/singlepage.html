@@ -2,33 +2,43 @@
 {% load static %}
 {% block description %}{{ product.description }}{% endblock %}
 {% block title %}{{ product.title }}{% endblock %}
+{% block breadcrumbs %}
+    <section class="breadcrumbstop">
+        <div class="container">
+            <ul class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/" class="breadcrumbs-item">
+                        <span itemprop="name">Автошкола</span> </a>
+                    <meta itemprop="position" content="1">
+                </li>
 
-{% block content %}
-    <section class="about-top">
-        <div class="container container-singlepage">
-
-            <div class="about-top-banner">
-
-                <div class="about-top-text">    {% autoescape off %} {{ product.content }} {% endautoescape %}</div>
-            </div>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">{{ product.name }}</span>
+                    <meta itemprop="position" content="2">
+                </li>
+            </ul>
         </div>
+    </section>
+{% endblock breadcrumbs %}
+{% block content %}
 
+
+
+    <section class="stock">
+        <div class="container">
+
+            <div class="stock-banner stock-banner-large">
+                <div>
+                    <div class="stock-banner-large-title"><h1>{{ product.name }}</h1></div>
+                    {% autoescape off %} {{ product.content }} {% endautoescape %}
+                    {% if product.code %}
+                        {% autoescape off %}{{ product.code }}{% endautoescape %}
+                {% endif %}
+
+                </div>
+
+            </div></div>
     </section>
 
-
-
-<!--
-    <div class="product-detail">
-        <h1>{{ product.name }}kontakty вава</h1>
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}
-{% static "img/no_image.png" %}{% endif %}">
-        <h1>{{ product.name }}</h1>
-        <h2><a href="{{ product.category.get_absolute_url }}">
-            {{ product.category }}</a></h2>
-        <p class="price">${{ product.price }}</p>
-
-        {{ product.content|linebreaks }}
-    </div>
--->
 
 {% endblock %}

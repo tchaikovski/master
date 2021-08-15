@@ -19,13 +19,13 @@
                   <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
                     <a itemprop="item" href="/courses/" class="breadcrumbs-item">
                         <span itemprop="name">Курсы</span> </a>
-                    <meta itemprop="position" content="1">
+                    <meta itemprop="position" content="2">
                 </li>
 
                  {% else %}
                      <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
                         <span itemprop="name">Курсы</span>
-                    <meta itemprop="position" content="1">
+                    <meta itemprop="position" content="2">
                 </li>
                  {% endif %}
 
@@ -51,23 +51,27 @@
                         <div class="stock-banner-large-left">
                             <span class="stock-banner-large-title-small">Цена обучения без скидок</span>
                             <span class="stock-banner-large-summ">{{ product.price }} ₽ </span>
+                            {% if  product.price_sale %}
                             <span class="stock-banner-large-title-small">Цена обучения со скидкой</span>
                             <span class="stock-banner-large-summ">{{ product.price_sale }} ₽ </span>
+                            {% endif %}
                         </div>
+                    {% if product.time %}
                         <div class="stock-banner-large-right">
                             <span class="stock-banner-large-title-small">Продолжительность</span>
                             <span class="stock-banner-large-summ">{{ product.time }}</span>
                         </div>
+                    {% endif %}
                     </div>
-                    <div class="stock-banner-large-text">
-                        {% autoescape off %} {{ product.content|truncatewords:10 }}{% endautoescape %}
-
-                    </div>
+{#                    <div class="stock-banner-large-text">#}
+{#                        {% autoescape off %} {{ product.content|truncatewords:10 }}{% endautoescape %}#}
+{##}
+{#                    </div>#}
 
                     <a href="{{ product.get_absolute_url }}" class="banner-btn"> Оставить заявку <i class="bottom-icon-arrow velvet-bg"></i> </a>
                 </div>
 
-                <a href="{{ product.get_absolute_url }}">
+                <a href="{{ product.get_absolute_url }}" style="height: 20em; display: block">
                     <div class="stock-banner-bg-img-wrap-list">
                         <picture>
                             <!--     <source media="(max-width: 750px)" srcset="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">-->
